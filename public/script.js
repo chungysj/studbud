@@ -1,4 +1,5 @@
 import Navigation from './component/navigation';
+import './component/tasklist';
 
 const links = document.querySelectorAll('.top-nav > ul > li > a');
 const pages = document.querySelectorAll('.page-container');
