@@ -1,5 +1,14 @@
 .app-container {
     background-color: rgb(255, 200, 200);
-    margin: 4em;
+}
+
+.page-container {
+  margin: 4em;
+
+  &#home {
     text-align: center;
   }
+  &:not(#home) {
+    display: none;
+  }
+}
