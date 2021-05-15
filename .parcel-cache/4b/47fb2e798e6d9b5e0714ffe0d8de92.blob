@@ -48,6 +48,7 @@ function renderTask(task){
 
     updateEmpty();
 
+
     // Create HTML elements
     let item = document.createElement("li");
     // set this up as a html attribute, so we can create arbitrary html attributes for different data we install. 
@@ -77,21 +78,20 @@ function renderTask(task){
       // remove that Item from the array all together once they click the delete button, we are going to do this in a function we will create called remove item from array 
       removeItemFromArray(taskListArray,index)
       console.log(taskListArray);
-      updateEmpty();
       item.remove();
     })
   
-  // Clear the input form
-  form.reset();
-}
+    // Clear the input form
+    form.reset();
+  }
 
 //  function to remove that frmom the array 
-function removeItemFromArray(arr, index) {
-    if (index > -1){
-        arr.splice(index, 1)
-    }
-    return arr;
-}
+  function removeItemFromArray(arr, index) {
+      if (index > -1){
+          arr.splice(index, 1)
+      }
+      return arr;
+  }
 
 // Make sure this makes sense for the user, and it doesnt tell them they havent added tasks, when they clearly have 
 // Add in a function to update this depending on if theres a task in the array or not 

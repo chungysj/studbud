@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
-	<link href="scss/main.scss" rel="stylesheet" type="text/css">
+	<link href="ac2b17b88ef0ab3e3e3316d5a6be3892" rel="stylesheet" type="text/css">
 </head>
 
 <body class="app-container">
@@ -22,10 +22,10 @@
 	<div id="home" class="page-container">
 		<h1>Hello World Wide Web</h1>
 
-		<p>This time with <a href="https://expressjs.com/">Express</a> + <a href="https://v2.parceljs.org/">Parcel</a> + <a href="https://sass-lang.com/">SASS (SCSS)</a>!</p>
+		<p>This time with <a href="a72065957fe902f40f1ba688f0450f00">Express</a> + <a href="8d8dc26c6986d8d40d8f3b9fe89723c6">Parcel</a> + <a href="8e6645975e6ba0cb20bed489a75ac873">SASS (SCSS)</a>!</p>
 	</div>
 
-	<div id='page1' class="page-container">
+	<div id="page1" class="page-container">
 		<h1>Page 1</h1>
 		<nav class="sub-nav">
 			<ul class="nav-links">
@@ -39,7 +39,7 @@
 				<div id="task-grid"> 
 					<form id="taskform">
 					<label for="task">Task:</label>
-					<input type="text" name="task" id="taskInput" required>
+					<input type="text" name="task" id="taskInput" required="">
 				
 					<!-- Date input -->
 					<label for="dueDate">Due Date: </label>
@@ -61,7 +61,7 @@
 					<option value="High">High</option>
 					</select>
 
-					</br>
+					<br>
 				
 					<button type="submit">Submit</button>
 				</form>
@@ -72,20 +72,20 @@
 			</div>
 		</div>
 
-		<div id="page1-2" class="sub-page-container" style="display:none;">
+		<div id="page1-2" class="sub-page-container" style="d05fadcbe2910d25003506e84d232081">
 			<h2>Page 1 - 2</h2>
 		</div>
 	</div>
 
-	<div id='page2' class="page-container">
+	<div id="page2" class="page-container">
 		<h1>Page 2</h1>
 	</div>
 
-	<div id='page3' class="page-container">
+	<div id="page3" class="page-container">
 		<h1>Page 3</h1>
 	</div>
 	
-<script src="script.js"></script>
+<script src="4e6340146f7d0152c44dbd6ccf58b0e0"></script>
 </body>
 
 </html>

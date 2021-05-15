@@ -623,7 +623,6 @@ function renderTask(task){
       // remove that Item from the array all together once they click the delete button, we are going to do this in a function we will create called remove item from array 
       removeItemFromArray(taskListArray,index)
       console.log(taskListArray);
-      updateEmpty();
       item.remove();
     })
   
@@ -651,4 +650,4 @@ function updateEmpty() {
 
 },{}]},["27Rzb","4OAbU"], "4OAbU", "parcelRequirec526")
 
-//# sourceMappingURL=index.8a5bc16d.js.map
+//# sourceMappingURL=index.HASH_REF_97912cc17f1f5bdf37964fbc8a5bc16d.js.map

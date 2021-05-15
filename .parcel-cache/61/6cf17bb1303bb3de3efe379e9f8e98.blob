@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
-	<link href="scss/main.scss" rel="stylesheet" type="text/css">
+	<link href="/index.HASH_REF_80038805bd6829e42a01d0f20c72b7db.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="app-container">
@@ -25,7 +25,7 @@
 		<p>This time with <a href="https://expressjs.com/">Express</a> + <a href="https://v2.parceljs.org/">Parcel</a> + <a href="https://sass-lang.com/">SASS (SCSS)</a>!</p>
 	</div>
 
-	<div id='page1' class="page-container">
+	<div id="page1" class="page-container">
 		<h1>Page 1</h1>
 		<nav class="sub-nav">
 			<ul class="nav-links">
@@ -39,7 +39,7 @@
 				<div id="task-grid"> 
 					<form id="taskform">
 					<label for="task">Task:</label>
-					<input type="text" name="task" id="taskInput" required>
+					<input type="text" name="task" id="taskInput" required="">
 				
 					<!-- Date input -->
 					<label for="dueDate">Due Date: </label>
@@ -61,7 +61,7 @@
 					<option value="High">High</option>
 					</select>
 
-					</br>
+					<br>
 				
 					<button type="submit">Submit</button>
 				</form>
@@ -72,20 +72,21 @@
 			</div>
 		</div>
 
-		<div id="page1-2" class="sub-page-container" style="display:none;">
+		<div id="page1-2" class="sub-page-container" style="display:none;
+">
 			<h2>Page 1 - 2</h2>
 		</div>
 	</div>
 
-	<div id='page2' class="page-container">
+	<div id="page2" class="page-container">
 		<h1>Page 2</h1>
 	</div>
 
-	<div id='page3' class="page-container">
+	<div id="page3" class="page-container">
 		<h1>Page 3</h1>
 	</div>
 	
-<script src="script.js"></script>
+<script src="/index.HASH_REF_97912cc17f1f5bdf37964fbc8a5bc16d.js"></script>
 </body>
 
 </html>
