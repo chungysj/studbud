@@ -1,14 +1,175 @@
-.app-container {
-    background-color: rgb(255, 200, 200);
+* {
+  box-sizing: border-box;
 }
 
-.page-container {
-  margin: 4em;
+html {
+    background-image:  
+    radial-gradient(at 0% 0%, hsla(170,59%,95%,1) 0, transparent 44%),  
+    radial-gradient(at 51% 100%, hsla(227,97%,88%,1) 0, transparent 50%),  
+    radial-gradient(at 100% 100%, hsla(222,100%,95%,1) 0, transparent 31%),  
+    radial-gradient(at 1% 99%, hsla(230,75%,87%,1) 0, transparent 53%),  
+    radial-gradient(at 100% 0%, hsla(224,100%,95%,1) 0, transparent 23%),  
+    radial-gradient(at 34% 0%, hsla(199,67%,80%,1) 0, transparent 43%),  
+    radial-gradient(at 100% 48%, hsla(219,96%,92%,1) 0, transparent 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
 
-  &#home {
-    text-align: center;
+.grid-container {
+  padding: 50px 50px 70px 50px;   // top, right, bottom, left
+  display: grid;
+  grid-template-columns: 0.9fr 1.18fr;
+  grid-template-rows: 65px 65px 1.8fr;
+  gap: 0px 65px;
+  grid-template-areas:
+    "header ." ". task" "features task";
+  width: 100vw;
+  height: 100vh;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.9fr;
+  gap: 35px 35px;
+  grid-template-areas:
+    "timer timer" "music dictionary";
+  grid-area: features;
+}
+.timer { 
+  grid-area: timer;
+  background-color: #ffff;
+  border-radius: 30px;  
+}
+.music, .dictionary { 
+  background-color: #ffff;
+  border-radius: 30px;  
+}
+
+button {
+  border-radius: 40px;
+  padding: 11px 40px;
+  text-align: center;
+  border-color: none;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.header-item {
+  color: #142348;
+  font-weight: 700;
+  margin-right: 100px;
+}
+
+.header { 
+  display: flex;
+  align-items: center;
+  .header-item {
+    font-size: 30px;
+    font-weight: 700;
   }
-  &:not(#home) {
-    display: none;
+  .dark-blue-btn { 
+    background-color: #142348;
+  }
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 65px 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "task-header" "quadrants";
+  grid-area: task;
+}
+
+.task-header { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 30px;
+
+  .light-blue-btn {
+    background-color: #65adfc;
+    padding: 11px 25px;
+    .fas {
+      margin-right: 20px;
+    }
+  }
+}
+
+.quadrants {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". urgent not-urgent" "important cards cards" "not-important cards cards";
+  grid-area: quadrants;
+  background-color: #ffff;
+  border-radius: 30px; 
+  padding-bottom: 50px;
+  padding-right: 50px; 
+  text-align: center;
+}
+.urgent { 
+  grid-area: urgent; 
+}
+.not-urgent { 
+  grid-area: not-urgent; 
+}
+.important { 
+  grid-area: important;
+}
+.not-important { 
+  grid-area: not-important;
+}
+.urgent, .not-urgent{
+  padding: 30px 0px 15px;  // top, right/left, bottom
+}
+
+.important, .not-important {
+  // Chrome doesnt support CSS writing-mode: sideways-lr but accepts vertical 
+  // So I used to transform rotate to create what I wanted
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  padding: 15px;
+  margin-top: 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 35px 35px;
+  grid-template-areas:
+    "do-it-card schedule-card" "relegate-card dont-do-card";
+  grid-area: cards;
+
+  .task-cards {
+    border-radius: 30px;  
+  }
+  .do-it-card { 
+    grid-area: do-it-card;
+    background-color: #edf7ff;
+  }
+
+  .schedule-card { 
+    grid-area: schedule-card;
+    background-color: #f1e9f8;
+  }
+
+  .relegate-card { 
+    grid-area: relegate-card; 
+    background-color: #fdedf0;
+  }
+
+  .dont-do-card { 
+    grid-area: dont-do-card;
+    background-color: #fff5f1;
   }
 }
