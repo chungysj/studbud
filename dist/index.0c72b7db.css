@@ -243,13 +243,15 @@ small, .text_small {
   grid-template-areas: "taskform tasklist";
 }
 .overlay {
-  position: absolute;
+  display: none;
+  position: fixed;
   margin-left: auto;
   margin-right: auto;
   right: 0;
   border: 1px solid #65adfc;
   background-color: #fff;
   border-radius: 30px;
+  overflow: auto;
 }
 #taskform {
   grid-area: taskform;
@@ -269,10 +271,10 @@ small, .text_small {
   position: absolute;
   right: 30px;
   top: 30px;
-  cursor: pointer;
 }
-.close-btn:hover {
+.close-btn:hover, .close-btn:focus {
   color: #65adfc;
+  cursor: pointer;
 }
 #tasklist {
   grid-area: tasklist;

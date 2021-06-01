@@ -656,7 +656,6 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-}
 },{}]},["27Rzb","4OAbU"], "4OAbU", "parcelRequirec526")
 
-//# sourceMappingURL=index.8a5bc16d.js.map
+//# sourceMappingURL=index.HASH_REF_97912cc17f1f5bdf37964fbc8a5bc16d.js.map

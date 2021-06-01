@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
-	<link href="scss/main.scss" rel="stylesheet" type="text/css">
+	<link href="ac2b17b88ef0ab3e3e3316d5a6be3892" rel="stylesheet" type="text/css">
 </head>
 
 <body class="app-container">
@@ -33,7 +33,7 @@
 				<h1>Pomodoro</h1>
 			</div>
 		
-			<div id='stopwatch' class="timer-page-container">
+			<div id="stopwatch" class="timer-page-container">
 				<h1>stopwatch</h1>
 			</div>
 		  </div>
@@ -52,11 +52,11 @@
 			</div>
 			<div class="quadrants">
 			<div id="taskModal" class="overlay">
-				<span class="close-btn fas fa-times"></span>
+				<span class="close-btn fas">&times;</span>
 				<div id="task-grid"> 
 					<form id="taskform">
 					<label for="task">Task:</label>
-					<input type="text" name="task" id="taskInput" required>
+					<input type="text" name="task" id="taskInput" required="">
 				
 					<!-- Date input -->
 					<label for="dueDate">Due Date: </label>
@@ -109,9 +109,9 @@
 		</div>
 	</div>
 	
-<script src="script.js"></script>
+<script src="4e6340146f7d0152c44dbd6ccf58b0e0"></script>
 <!-- Font Awesome Icon -->
-<script src="https://kit.fontawesome.com/438023e851.js" crossorigin="anonymous"></script>
+<script src="925725076c37bf67dc6b65763f8482e9" crossorigin="anonymous"></script>
 </body>
 
 </html>

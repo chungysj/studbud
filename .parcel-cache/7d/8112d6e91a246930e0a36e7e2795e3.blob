@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
-	<link href="scss/main.scss" rel="stylesheet" type="text/css">
+	<link href="/index.HASH_REF_80038805bd6829e42a01d0f20c72b7db.css" rel="stylesheet" type="text/css">
 </head>
 
 <body class="app-container">
@@ -33,7 +33,7 @@
 				<h1>Pomodoro</h1>
 			</div>
 		
-			<div id='stopwatch' class="timer-page-container">
+			<div id="stopwatch" class="timer-page-container">
 				<h1>stopwatch</h1>
 			</div>
 		  </div>
@@ -56,7 +56,7 @@
 				<div id="task-grid"> 
 					<form id="taskform">
 					<label for="task">Task:</label>
-					<input type="text" name="task" id="taskInput" required>
+					<input type="text" name="task" id="taskInput" required="">
 				
 					<!-- Date input -->
 					<label for="dueDate">Due Date: </label>
@@ -109,7 +109,7 @@
 		</div>
 	</div>
 	
-<script src="script.js"></script>
+<script src="/index.HASH_REF_97912cc17f1f5bdf37964fbc8a5bc16d.js"></script>
 <!-- Font Awesome Icon -->
 <script src="https://kit.fontawesome.com/438023e851.js" crossorigin="anonymous"></script>
 </body>
