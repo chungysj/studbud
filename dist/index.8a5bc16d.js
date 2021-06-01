@@ -581,25 +581,36 @@ function addTask(taskDescription, dueDate, estimatedTime, priorityRating, comple
 function renderTask(task){
 
     updateEmpty();
+    // create DIV
+    let taskDiv = document.createElement('div');
+    taskDiv.classList.add("tasksDiv")
 
-
-    // Create HTML elements
-    let item = document.createElement("li");
+    // Create LI
+    let item = document.createElement('li');
     // set this up as a html attribute, so we can create arbitrary html attributes for different data we install. 
     // we do this by using the set attribute function, for the name attribute we usually use the data pre fix followed by whatever type of data we're storing 
     item.setAttribute('data-id', task.id);
-    item.innerHTML = "<p>" + task.taskDescription + "</p>" + "<p>" + task.dueDate + "</p>" + "<p>" + task.dateCreated + "</p>" + "<p>" + task.estimatedTime + "</p>" + "<p>" + task.completionTime + "</p>" + "<p>" + task.priorityRating + "</p>" + "<p>" + task.completionStatus + "</p>";
+    item.innerHTML = "<p>" + task.taskDescription + "</p>" + "<p>" + task.dueDate + "</p>";
   
-    tasklist.appendChild(item);
-  
-    // Extra Task DOM elements
+    taskDiv.appendChild(item);
+
+    // Complete Button
+    let completedButton = document.createElement("button");
+    completedButton.innerHTML = '<i class="fas fa-check"></i>';
+    completedButton.classList.add("complete-btn");
+    taskDiv.appendChild(completedButton);
+
+    // Delete Button
     let delButton = document.createElement("button");
-    let delButtonText = document.createTextNode("Delete Task");
-    delButton.appendChild(delButtonText);
-    item.appendChild(delButton);
-  
-  
-    // Event Listeners for DOM elements
+    delButton.innerHTML = '<i class="fas fa-trash"></i>';
+    delButton.classList.add('delete-btn');
+    taskDiv.appendChild(delButton);
+
+    // Append 
+    tasklist.appendChild(taskDiv);
+
+
+    // Event Listeners for delete button
     delButton.addEventListener("click", function(event){
       event.preventDefault();
       console.log(taskListArray);
@@ -613,8 +624,14 @@ function renderTask(task){
       removeItemFromArray(taskListArray,index)
       console.log(taskListArray);
       updateEmpty();
-      item.remove();
+      taskDiv.remove();
+
     })
+    // Event Listeners for complete button
+    completedButton.addEventListener("click", function(event){
+      let taskDiv = event.target.parentElement;
+      taskDiv.classList.toggle("completed");
+    })   
   
     // Clear the input form
     form.reset();
@@ -638,7 +655,6 @@ function updateEmpty() {
     }
 }
 
-
 // Get the modal
 var modal = document.getElementById("taskModal");
 
@@ -656,6 +672,13 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 },{}]},["27Rzb","4OAbU"], "4OAbU", "parcelRequirec526")
 

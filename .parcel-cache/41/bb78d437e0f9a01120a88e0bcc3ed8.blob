@@ -54,6 +54,7 @@ button {
   cursor: pointer;
   letter-spacing: 2px;
   transition: all 0.4s;
+  background: #142348;
 }
 .light-blue-btn {
   background-color: #65adfc;
@@ -96,15 +97,15 @@ button {
   grid-template-areas: "task-header" "quadrants";
   grid-area: task;
 }
+.fa-plus, .fa-check-circle, .fa-clock, .fa-user-plus, .fa-trash-alt {
+  margin-right: 20px;
+}
 .task-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
   margin-bottom: 25px;
-}
-.task-header .fa-plus {
-  margin-right: 20px;
 }
 .quadrants {
   display: grid;
@@ -158,6 +159,8 @@ button {
 }
 .cards .task-cards {
   border-radius: 30px;
+  padding: 40px;
+  overflow: scroll;
 }
 .cards .do-it-card {
   grid-area: do-it-card;
@@ -241,10 +244,11 @@ small, .text_small {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "taskform tasklist";
+  overflow: auto;
 }
-.overlay {
+.modal {
   display: none;
-  position: fixed;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
   right: 0;
@@ -274,8 +278,36 @@ small, .text_small {
 }
 .close-btn:hover, .close-btn:focus {
   color: #65adfc;
+  text-decoration: none;
   cursor: pointer;
 }
 #tasklist {
   grid-area: tasklist;
+  list-style: none;
+}
+.tasksDiv {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasksDiv li {
+  flex: 1;
+}
+.delete-btn, .complete-btn {
+  background: coral;
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+}
+.complete-btn {
+  background: green;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fa-trash, .fa-check {
+  pointer-events: none;
 }

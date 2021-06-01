@@ -70,6 +70,7 @@ button {
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  background: #142348;
 }
 
 .light-blue-btn {
@@ -124,16 +125,16 @@ button {
   grid-area: task;
 }
 
+.fa-plus, .fa-check-circle, .fa-clock, .fa-user-plus, .fa-trash-alt{
+  margin-right: 20px;
+}
+
 .task-header { 
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
   margin-bottom: 25px;
-
-  .fa-plus {
-    margin-right: 20px;
-  }
 }
 
 .quadrants {
@@ -191,6 +192,8 @@ button {
 
   .task-cards {
     border-radius: 30px;  
+    padding: 40px;
+    overflow: scroll;
   }
   .do-it-card { 
     grid-area: do-it-card;

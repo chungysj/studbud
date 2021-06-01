@@ -3,11 +3,12 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "taskform tasklist";
+    overflow: auto;
 }
 
-.overlay {
+.modal {
     display: none; // Hidden by default 
-    position: fixed;
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
     right: 0;
@@ -39,9 +40,42 @@
 }
 .close-btn:hover, .close-btn:focus {
     color: #65adfc;
+    text-decoration: none;
     cursor: pointer;
 }
 
 #tasklist {
     grid-area: tasklist;
+    list-style: none;
+}
+.tasksDiv {
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasksDiv li {
+    flex: 1;
+}
+
+.delete-btn, .complete-btn {
+    background: coral;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: green;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
 }
