@@ -1,19 +1,43 @@
-#task-grid {
+.task-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "taskform tasklist";
 }
 
+.overlay {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    border: 1px solid #65adfc;
+    background-color: #fff;
+    border-radius: 30px; 
+}
+
 #taskform {
     grid-area: taskform;
-    max-width: 300px;
-    margin: 0 auto;
-
+    margin: 50px;
     label {
         display: block;
         width: 100%;
     }
+    select, input {
+        height: 35px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.close-btn {
+    color: #142348;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+.close-btn:hover {
+    color: #65adfc;
 }
 
 #tasklist {

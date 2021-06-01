@@ -446,20 +446,18 @@ var _componentNavigation = require('./component/navigation');
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 var _componentNavigationDefault = _parcelHelpers.interopDefault(_componentNavigation);
 require('./component/tasklist');
-const timerLinks = document.querySelectorAll('.timer-nav > ul > li > a');
-const timerPages = document.querySelectorAll('.timer-page-container');
-var timerNav = new _componentNavigationDefault.default(timerLinks, timerPages);
-// For Each loop that allows us to loop through arrays or collections one by one and output each iteration or resulting item from each iteration as a input parameter as a call back function
-// which then will passs down to any other functions
-// in this case we say for each of the link we want to add a event listener which listens out for the 'click' function and when that click function happens we want a console log out the link to the console
-timerNav.links.forEach(link => {
+const links = document.querySelectorAll('.timer-nav > ul > li > a');
+const pages = document.querySelectorAll('.timer-page-container');
+var timerNav = new _componentNavigationDefault.default(links, pages);
+timerNav.getLinks();
+timerNav.links.forEach(function (link) {
   link.addEventListener('click', function () {
     let pageId = timerNav.getHash(link);
     timerNav.setPage(pageId);
   });
 });
 
-},{"./component/navigation":"5dOJi","./component/tasklist":"1PYKt","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5dOJi":[function(require,module,exports) {
+},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 class Navigation {
@@ -486,7 +484,7 @@ class Navigation {
     document.getElementById(pageId).style.display = "block";
   }
   getHash(link) {
-    return link.href.split('#')[1];
+    return link.href.split("#")[1];
   }
 }
 exports.default = Navigation;
@@ -584,6 +582,7 @@ function renderTask(task){
 
     updateEmpty();
 
+
     // Create HTML elements
     let item = document.createElement("li");
     // set this up as a html attribute, so we can create arbitrary html attributes for different data we install. 
@@ -617,17 +616,17 @@ function renderTask(task){
       item.remove();
     })
   
-  // Clear the input form
-  form.reset();
-}
+    // Clear the input form
+    form.reset();
+  }
 
 //  function to remove that frmom the array 
-function removeItemFromArray(arr, index) {
-    if (index > -1){
-        arr.splice(index, 1)
-    }
-    return arr;
-}
+  function removeItemFromArray(arr, index) {
+      if (index > -1){
+          arr.splice(index, 1)
+      }
+      return arr;
+  }
 
 // Make sure this makes sense for the user, and it doesnt tell them they havent added tasks, when they clearly have 
 // Add in a function to update this depending on if theres a task in the array or not 

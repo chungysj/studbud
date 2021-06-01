@@ -42,6 +42,16 @@ html {
   background-color: #ffff;
   border-radius: 30px;  
 }
+.timer-page-container {
+  margin: 4em;
+  &#pomodoro {
+    text-align: center;
+  }
+  &:not(#pomodoro) {
+    display: none;
+  }
+}
+
 .music, .dictionary { 
   background-color: #ffff;
   border-radius: 30px;  
@@ -49,19 +59,38 @@ html {
 
 button {
   border-radius: 40px;
-  padding: 11px 40px;
   text-align: center;
-  border-color: none;
   color: #fff;
   font-size: 25px;
   font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   letter-spacing: 2px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
 }
+
+.light-blue-btn {
+  background-color: #65adfc;
+  border: 2px solid #65adfc;
+  background: #65adfc;
+  padding: 11px 25px;
+}
+
+.light-blue-btn:hover {
+  background: transparent;
+  color: #65adfc;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 
 .header-item {
   color: #142348;
   font-weight: 700;
-  margin-right: 100px;
 }
 
 .header { 
@@ -69,10 +98,19 @@ button {
   align-items: center;
   .header-item {
     font-size: 30px;
-    font-weight: 700;
+    margin-right: 100px;
   }
   .dark-blue-btn { 
-    background-color: #142348;
+    background: #142348;
+    padding: 11px 40px;
+    border: 2px solid #142348;
+  }
+  .dark-blue-btn:hover {
+    background: transparent;
+    color: #142348;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
   }
 }
 
@@ -91,14 +129,10 @@ button {
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 
-  .light-blue-btn {
-    background-color: #65adfc;
-    padding: 11px 25px;
-    .fas {
-      margin-right: 20px;
-    }
+  .fa-plus {
+    margin-right: 20px;
   }
 }
 
@@ -108,12 +142,16 @@ button {
   grid-template-rows: max-content;
   gap: 0px 0px;
   grid-template-areas:
-    ". urgent not-urgent" "important cards cards" "not-important cards cards";
+    "space urgent not-urgent" "important cards cards" "not-important cards cards";
   grid-area: quadrants;
   background-color: #ffff;
   border-radius: 30px; 
   padding-bottom: 50px;
-  padding-right: 50px; 
+}
+.space { 
+  grid-area: space; 
+}
+.urgent, .not-urgent, .important, .not-important {
   text-align: center;
 }
 .urgent { 
@@ -149,6 +187,7 @@ button {
   grid-template-areas:
     "do-it-card schedule-card" "relegate-card dont-do-card";
   grid-area: cards;
+  padding-right: 50px; 
 
   .task-cards {
     border-radius: 30px;  

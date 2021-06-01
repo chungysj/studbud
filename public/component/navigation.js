@@ -1,5 +1,5 @@
 class Navigation {
-    constructor(links, pages){
+    constructor(links, pages) {
         this.links = links;
         this.pages = pages;
         this.currentPage = null;
@@ -28,7 +28,7 @@ class Navigation {
     }
 
     getHash(link) {
-        return link.href.split('#')[1];
+        return link.href.split("#")[1];
     }
 }
 
