@@ -446,6 +446,8 @@ var _componentNavigation = require('./component/navigation');
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 var _componentNavigationDefault = _parcelHelpers.interopDefault(_componentNavigation);
 require('./component/tasklist');
+require('./component/dictionary');
+require('./component/timer');
 const links = document.querySelectorAll('.timer-nav > ul > li > a');
 const pages = document.querySelectorAll('.timer-page-container');
 var timerNav = new _componentNavigationDefault.default(links, pages);
@@ -457,7 +459,7 @@ timerNav.links.forEach(function (link) {
   });
 });
 
-},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt"}],"5dOJi":[function(require,module,exports) {
+},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/timer":"28m7h"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 class Navigation {
@@ -535,7 +537,12 @@ exports.export = function (dest, destName, get) {
 const form = document.getElementById("taskform");
 const button = document.querySelector("#taskform > button")
 var taskInput = document.getElementById("taskInput");
+
 var tasklist = document.getElementById("tasklist");
+var doitTasks = document.getElementById("doitTasks"); //do-it-tasks
+var scheduleTasks = document.getElementById("scheduleTasks"); //schedule-tasks
+var relegateTasks = document.getElementById("relegateTasks"); //relegate-tasks
+var dontdoTasks = document.getElementById("dontdoTasks"); //dont-do-tasks
 
 var dueDateInput = document.getElementById("dueDateInput");
 var completionTimeInput = document.getElementById("completionTimeInput");
@@ -561,8 +568,8 @@ function addTask(taskDescription, dueDate, estimatedTime, priorityRating, comple
     let d = new Date();
     let dateCreated = d.getFullYear();
     let task = {  
-        // this id is going to be a way we can link our tasks inside the array to the task that is going to display on the screen
-        // use the Date() field tiem. use the data.now function to return that date as a time stamp  
+      // this id is going to be a way we can link our tasks inside the array to the task that is going to display on the screen
+      // use the Date() field tiem. use the data.now function to return that date as a time stamp  
       id: Date.now(),
       taskDescription,
       dueDate,
@@ -610,7 +617,7 @@ function renderTask(task){
     tasklist.appendChild(taskDiv);
 
 
-    // Event Listeners for delete button
+    // Event Listeners for DOM elements
     delButton.addEventListener("click", function(event){
       event.preventDefault();
       console.log(taskListArray);
@@ -625,16 +632,16 @@ function renderTask(task){
       console.log(taskListArray);
       updateEmpty();
       taskDiv.remove();
-
     })
     // Event Listeners for complete button
     completedButton.addEventListener("click", function(event){
       let taskDiv = event.target.parentElement;
       taskDiv.classList.toggle("completed");
-    })   
-  
+    })  
+
     // Clear the input form
-    form.reset();
+    form.reset();  
+    updateEmpty();
   }
 
 //  function to remove that frmom the array 
@@ -680,6 +687,13 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+},{}],"4P7Sk":[function(require,module,exports) {
+$.getJSON("https://dictionaryapi.com/api/v3/references/collegiate/json/test?key=0f21b45e-307b-4c84-bdbf-aadcb1878967", 
+function(data){
+    console.log(data);
+})
+},{}],"28m7h":[function(require,module,exports) {
+
 },{}]},["27Rzb","4OAbU"], "4OAbU", "parcelRequirec526")
 
 //# sourceMappingURL=index.8a5bc16d.js.map

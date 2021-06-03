@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
 	<link href="/index.0c72b7db.css" rel="stylesheet" type="text/css">
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
 </head>
 
 <body class="app-container">
@@ -30,16 +33,28 @@
 			</nav>
 		
 			<div id="pomodoro" class="timer-page-container">
-				<h1>Pomodoro</h1>
+				<h2>Pomodoro</h2>
 			</div>
 		
 			<div id="stopwatch" class="timer-page-container">
-				<h1>stopwatch</h1>
+				<h2>stopwatch</h2>
 			</div>
 		  </div>
-		  <div class="music"></div>
-		  <div class="dictionary"></div>
-		</div>
+		  <div class="music">
+		  </div>
+		  <div class="dictionary">
+			<h2>Dictionary</h2>
+			<div class="dictionary-input-wrap">
+				<button class="search-btn" id="search"><i class="fa fa-search"></i></button>
+				<input type="text" placeholder="Search" id="dictionary-input">
+			</div>
+			<div class="definition-container">
+				<p class="word"></p>
+				<p class="defintion"></p>
+				<p class="synoymns"></p>
+			</div>
+			</div>
+		  </div>
 
 		<div class="task">
 			<div class="task-header">
@@ -97,21 +112,31 @@
 			<div class="cards">
 				<div class="task-cards do-it-card">
 					<h2><i class="far fa-check-circle"></i>Do it</h2>
-					
+					<div id="tasklist">
 						<p id="emptyList">You have not added any tasks yet</p>
-						<ul id="tasklist"></ul>
-					
+						<ul id="doitTasks"></ul>
+					</div>
 				</div>
 				<div class="task-cards schedule-card">
 					<h2><i class="far fa-clock"></i>Schedule</h2>
-
+					<div id="tasklist">
+						<p id="emptyList">You have not added any tasks yet</p>
+						<ul id="scheduleTasks"></ul>
+					</div>
 				</div>
 				<div class="task-cards relegate-card">
 					<h2><i class="fas fa-user-plus"></i>Relegate</h2>
+					<div id="tasklist">
+						<p id="emptyList">You have not added any tasks yet</p>
+						<ul id="relegateTasks"></ul>
+					</div>
 				</div>
 				<div class="task-cards dont-do-card">
+					<div id="tasklist">
 					<h2><i class="fas fa-trash-alt"></i>Don't Do</h2>
-
+						<p id="emptyList">You have not added any tasks yet</p>
+						<ul id="dontdoTasks"></ul>
+					</div>
 				</div>
 			</div>
 			</div>
