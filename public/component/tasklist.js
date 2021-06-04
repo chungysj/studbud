@@ -3,9 +3,6 @@ const button = document.querySelector("#taskform > button")
 var taskInput = document.getElementById("taskInput");
 
 let tasklist;
-var scheduleTasks = document.getElementById("scheduleTasks"); //schedule-tasks
-var relegateTasks = document.getElementById("relegateTasks"); //relegate-tasks
-var dontdoTasks = document.getElementById("dontdoTasks"); //dont-do-tasks
 
 var dueDateInput = document.getElementById("dueDateInput");
 var completionTimeInput = document.getElementById("completionTimeInput");
@@ -157,11 +154,18 @@ function renderTask(task){
 // Add in a function to update this depending on if theres a task in the array or not 
 function updateEmpty() {
     if (taskListArray.length > 0){
-        document.getElementById('emptyList').style.display = 'none';
+      document.querySelector('.emptyList').style.display = 'none';
     } else {
-        document.getElementById('emptyList').style.display = 'block';
+        document.querySelector('.emptyList').style.display = 'block';
     }
-}
+
+    // if (tasklist = document.getElementById("dont-do").innerHTML = ''){
+    //   document.querySelector('.emptyList').style.display = 'none';
+    // } else {
+    //     document.querySelector('.emptyList').style.display = 'block';
+    // }
+
+  }
 
 // Get the modal
 var modal = document.getElementById("taskModal");

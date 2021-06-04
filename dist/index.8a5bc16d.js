@@ -460,7 +460,7 @@ timerNav.links.forEach(function (link) {
   });
 });
 
-},{"./component/navigation":"5dOJi","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/timer":"28m7h","./component/music-player":"3o3lM","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5dOJi":[function(require,module,exports) {
+},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/timer":"28m7h","./component/music-player":"3o3lM"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 class Navigation {
@@ -540,9 +540,6 @@ const button = document.querySelector("#taskform > button")
 var taskInput = document.getElementById("taskInput");
 
 let tasklist;
-var scheduleTasks = document.getElementById("scheduleTasks"); //schedule-tasks
-var relegateTasks = document.getElementById("relegateTasks"); //relegate-tasks
-var dontdoTasks = document.getElementById("dontdoTasks"); //dont-do-tasks
 
 var dueDateInput = document.getElementById("dueDateInput");
 var completionTimeInput = document.getElementById("completionTimeInput");
@@ -694,11 +691,11 @@ function renderTask(task){
 // Add in a function to update this depending on if theres a task in the array or not 
 function updateEmpty() {
     if (taskListArray.length > 0){
-        document.getElementById('emptyList').style.display = 'none';
+      document.querySelector('.emptyList').style.display = 'none';
     } else {
-        document.getElementById('emptyList').style.display = 'block';
+        document.querySelector('.emptyList').style.display = 'block';
     }
-}
+  }
 
 // Get the modal
 var modal = document.getElementById("taskModal");
@@ -747,9 +744,14 @@ let apiKey = '0f21b45e-307b-4c84-bdbf-aadcb1878967';
 let notFound = document.querySelector('.not-found');
 let defBox = document.querySelector('.def');
 let synsBox = document.querySelector('.syns');
+let loading= document.querySelector('.loading');
 
 searchBtn.addEventListener('click', function(e){
     e.preventDefault();
+    // clear data
+    notFound.innerText = '';
+    defBox.innerText = '';
+    synsBox.innerText = '';
 
     // Get input data
     let word = input.value;
@@ -764,12 +766,15 @@ searchBtn.addEventListener('click', function(e){
 })
 
 async function getData(word) {
+    loading.style.display = 'block';
+
     // Ajax call 
     const response = await fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${apiKey}`);
     const data =  await response.json();
 
     // if empty result 
     if (!data.length) {
+        loading.style.display = 'none';
         notFound.innerText = ' No result found';
         return;
     }
@@ -791,14 +796,16 @@ async function getData(word) {
     console.log(data);
 
     // Result found
+    loading.style.display = 'none';
     let definition = data[0].shortdef[0];
     defBox.innerText = definition;
 
-    if (data[0].syns[0].pt[0]) {
-        let synoymns = data[0].syns[0].pt[0];
+    if (data[0].syns[0].pt[0][1]) {
+        let synoymns = data[0].syns[0].pt[0][1];
         synsBox.innerText = synoymns;
     } else {
         synsBox.innerText = "Synonyms not found..";
+        
     }
 
     

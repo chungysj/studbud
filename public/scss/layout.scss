@@ -141,7 +141,7 @@ button {
 .quadrants {
   display: grid;
   grid-template-columns: max-content;
-  grid-template-rows: 100px minmax(30px, 280px) minmax(30px, 280px);
+  grid-template-rows: 100px minmax(30px, 300px) minmax(30px, 300px);
   gap: 0px 0px;
   grid-template-areas:
     "space urgent not-urgent" "important cards cards" "not-important cards cards";
