@@ -6,9 +6,10 @@
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
 	<link href="/index.0c72b7db.css" rel="stylesheet" type="text/css">
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	
+	<!-- Font Awesome Icon -->
+	<script src="https://kit.fontawesome.com/438023e851.js" crossorigin="anonymous"></script>
+	<!-- Google Icon -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body class="app-container">
@@ -43,16 +44,21 @@
 		  <div class="music">
 		  </div>
 		  <div class="dictionary">
-			<h2>Dictionary</h2>
-			<div class="dictionary-input-wrap">
-				<button class="search-btn" id="search"><i class="fa fa-search"></i></button>
-				<input type="text" placeholder="Search" id="dictionary-input">
-			</div>
-			<div class="definition-container">
-				<p class="word"></p>
-				<p class="defintion"></p>
-				<p class="synoymns"></p>
-			</div>
+				<h2>Dictionary</h2>
+				<div class="dictionary-form-wrap">
+					<div class="input-wrap">
+						<button class="search-btn" id="search"><i class="fa fa-search"></i></button>
+						<input type="text" placeholder="Search" id="input">
+					</div>
+				</div>
+				<section class="data dictionary-conatiner">
+					<span class="loading">Loading...</span>
+					<p>Definition</p>
+					<p class="def"></p>
+					<p>Synoymns</p>
+					<p class="syns"></p>
+					<div class="not-found"></div>
+				</section>
 			</div>
 		  </div>
 
@@ -144,8 +150,6 @@
 	</div>
 	
 <script src="/index.8a5bc16d.js"></script>
-<!-- Font Awesome Icon -->
-<script src="https://kit.fontawesome.com/438023e851.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

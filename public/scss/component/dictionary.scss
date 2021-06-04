@@ -1,5 +1,6 @@
-.dictionary-input-wrap {
+.dictionary-form-wrap {
     border: 1px solid #ddd;
+    display: flex;
     margin-top: 20px;
     border-radius: 50px;
 
@@ -18,7 +19,27 @@
     }
 }
 
-.dictionary-input-wrap input::placeholder {
+.dictionary-form-wrap input::placeholder {
     color: rgb(182, 178, 178);
   }
 
+section.data {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.loading {
+    display: none;
+}
+
+
+.suggested {
+    background: #142348;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-top: 5px;
+    display: inline-block;
+}
