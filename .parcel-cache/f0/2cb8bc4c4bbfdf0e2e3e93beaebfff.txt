@@ -25,7 +25,7 @@
 73C:\Projects\DECO2017\Jackie\studbud\node_modules\to-object-path\README.md130905643320000000 0
 94C:\Projects\DECO2017\Jackie\studbud\node_modules\resolve\test\module_dir\ymodules\aaa\index.js121436361000000000 0
 82C:\Projects\DECO2017\Jackie\studbud\node_modules\jsdom\lib\jsdom\browser\resources132672568621931801 1
-40C:\Projects\DECO2017\Jackie\studbud\dist132672584538375999 1
+40C:\Projects\DECO2017\Jackie\studbud\dist132672597086680263 1
 121C:\Projects\DECO2017\Jackie\studbud\node_modules\postcss-modules-local-by-default\node_modules\postcss\lib\stringifier.js121436361000000000 0
 99C:\Projects\DECO2017\Jackie\studbud\node_modules\elliptic\node_modules\inherits\inherits_browser.js121436361000000000 0
 97C:\Projects\DECO2017\Jackie\studbud\node_modules\csso\node_modules\css-tree\lib\definition-syntax132672568729991210 1
@@ -183,7 +183,7 @@
 87C:\Projects\DECO2017\Jackie\studbud\node_modules\postcss-normalize-unicode\node_modules132672568827514678 1
 60C:\Projects\DECO2017\Jackie\studbud\node_modules\create-hash132672568857602045 1
 81C:\Projects\DECO2017\Jackie\studbud\node_modules\core-js\es\number\parse-float.js121436361000000000 0
-59C:\Projects\DECO2017\Jackie\studbud\public\scss\layout.scss132672567694999066 0
+59C:\Projects\DECO2017\Jackie\studbud\public\scss\layout.scss132672590362678762 0
 89C:\Projects\DECO2017\Jackie\studbud\node_modules\uri-js\dist\esnext\schemes\urn-uuid.d.ts121436361000000000 0
 102C:\Projects\DECO2017\Jackie\studbud\node_modules\postcss-calc\node_modules\supports-color\package.json132672568892739405 0
 77C:\Projects\DECO2017\Jackie\studbud\node_modules\css-tree\lib\parser\index.js121436361000000000 0
@@ -222,7 +222,7 @@
 96C:\Projects\DECO2017\Jackie\studbud\node_modules\node-addon-api\doc\typed_threadsafe_function.md121436361000000000 0
 58C:\Projects\DECO2017\Jackie\studbud\public\scss\reset.scss132672567695009035 0
 104C:\Projects\DECO2017\Jackie\studbud\node_modules\postcss-modules-values\node_modules\chalk\index.js.flow121436361000000000 0
-64C:\Projects\DECO2017\Jackie\studbud\public\component\tasklist.js132672584536608324 0
+64C:\Projects\DECO2017\Jackie\studbud\public\component\tasklist.js132672586047871065 0
 91C:\Projects\DECO2017\Jackie\studbud\node_modules\performance-now\src\performance-now.coffee131283235770000000 0
 99C:\Projects\DECO2017\Jackie\studbud\node_modules\stylehacks\node_modules\color-convert\package.json132672568868241031 0
 103C:\Projects\DECO2017\Jackie\studbud\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js121436361000000000 0
@@ -289,7 +289,7 @@
 75C:\Projects\DECO2017\Jackie\studbud\node_modules\pbkdf2\lib\sync-browser.js121436361000000000 0
 68C:\Projects\DECO2017\Jackie\studbud\public\scss\component\timer.scss132672567694999066 0
 71C:\Projects\DECO2017\Jackie\studbud\node_modules\safe-buffer\index.d.ts132672567694619059 0
-66C:\Projects\DECO2017\Jackie\studbud\public\component\dictionary.js132672567694959069 0
+66C:\Projects\DECO2017\Jackie\studbud\public\component\dictionary.js132672597084625530 0
 77C:\Projects\DECO2017\Jackie\studbud\node_modules\es-to-primitive\CHANGELOG.md121436361000000000 0
 119C:\Projects\DECO2017\Jackie\studbud\node_modules\stylehacks\node_modules\postcss-selector-parser\dist\selectors\node.js121436361000000000 0
 74C:\Projects\DECO2017\Jackie\studbud\node_modules\setimmediate\package.json132672568873873421 0
@@ -5535,7 +5535,7 @@
 88C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\dommatrix.js121436361000000000 0
 73C:\Projects\DECO2017\Jackie\studbud\node_modules\extsprintf\jsl.node.conf130610031810000000 0
 94C:\Projects\DECO2017\Jackie\studbud\node_modules\stylehacks\dist\plugins\trailingSlashComma.js121436361000000000 0
-63C:\Projects\DECO2017\Jackie\studbud\dist\index.0c72b7db.css.map132672584538285991 0
+63C:\Projects\DECO2017\Jackie\studbud\dist\index.0c72b7db.css.map132672597086650629 0
 80C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\regions\TK.js121436361000000000 0
 101C:\Projects\DECO2017\Jackie\studbud\node_modules\snapdragon\node_modules\define-property\package.json132672568874254117 0
 90C:\Projects\DECO2017\Jackie\studbud\node_modules\stylehacks\dist\dictionary\identifiers.js121436361000000000 0
@@ -14959,7 +14959,7 @@
 94C:\Projects\DECO2017\Jackie\studbud\node_modules\cssnano\node_modules\postcss\lib\postcss.d.ts121436361000000000 0
 86C:\Projects\DECO2017\Jackie\studbud\node_modules\core-js\internals\object-to-string.js121436361000000000 0
 68C:\Projects\DECO2017\Jackie\studbud\node_modules\hash-base\README.md121436361000000000 0
-51C:\Projects\DECO2017\Jackie\studbud\dist\index.html132672577037951427 0
+51C:\Projects\DECO2017\Jackie\studbud\dist\index.html132672595169858926 0
 91C:\Projects\DECO2017\Jackie\studbud\node_modules\hash-base\node_modules\safe-buffer\LICENSE121436361000000000 0
 100C:\Projects\DECO2017\Jackie\studbud\node_modules\hash-base\node_modules\inherits\inherits_browser.js121436361000000000 0
 81C:\Projects\DECO2017\Jackie\studbud\node_modules\core-js\stable\instance\slice.js121436361000000000 0
@@ -18480,7 +18480,7 @@
 85C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\mathml.js121436361000000000 0
 88C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\maxlength.js121436361000000000 0
 94C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\media-fragments.js121436361000000000 0
-59C:\Projects\DECO2017\Jackie\studbud\dist\index.0c72b7db.css132672584538230803 0
+59C:\Projects\DECO2017\Jackie\studbud\dist\index.0c72b7db.css132672597086569194 0
 83C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\menu.js121436361000000000 0
 84C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\meter.js121436361000000000 0
 87C:\Projects\DECO2017\Jackie\studbud\node_modules\caniuse-lite\data\features\minmaxwh.js121436361000000000 0
@@ -21236,8 +21236,8 @@
 63C:\Projects\DECO2017\Jackie\studbud\dist\index.21fc8037.css.map132672567693279077 0
 62C:\Projects\DECO2017\Jackie\studbud\dist\index.5e993fbd.js.map132672567693289070 0
 62C:\Projects\DECO2017\Jackie\studbud\dist\index.6788c1b1.js.map132672567693299070 0
-58C:\Projects\DECO2017\Jackie\studbud\dist\index.8a5bc16d.js132672584538220807 0
-62C:\Projects\DECO2017\Jackie\studbud\dist\index.8a5bc16d.js.map132672584538296011 0
+58C:\Projects\DECO2017\Jackie\studbud\dist\index.8a5bc16d.js132672597086569194 0
+62C:\Projects\DECO2017\Jackie\studbud\dist\index.8a5bc16d.js.map132672597086650629 0
 59C:\Projects\DECO2017\Jackie\studbud\dist\index.e0c12d3d.css132672567693309067 0
 58C:\Projects\DECO2017\Jackie\studbud\dist\index.f6827cb0.js132672567693319066 0
 62C:\Projects\DECO2017\Jackie\studbud\dist\index.f6827cb0.js.map132672567693319066 0

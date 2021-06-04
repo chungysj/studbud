@@ -794,14 +794,8 @@ async function getData(word) {
     let definition = data[0].shortdef[0];
     defBox.innerText = definition;
 
-    if (data[0].syns[0].pt[0]) {
-        let synoymns = data[0].syns[0].pt[0];
-        synsBox.innerText = synoymns;
-    } else {
-        synsBox.innerText = "Synonyms not found..";
-    }
-
-    
+    let synoymns = data[0].syns[0].pt[0];
+    synsBox.innerText = synoymns;
 
     console.log(data);
 }
@@ -811,4 +805,4 @@ async function getData(word) {
 
 },{}]},["27Rzb","4OAbU"], "4OAbU", "parcelRequirec526")
 
-//# sourceMappingURL=index.8a5bc16d.js.map
+//# sourceMappingURL=index.HASH_REF_97912cc17f1f5bdf37964fbc8a5bc16d.js.map
