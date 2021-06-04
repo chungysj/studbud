@@ -460,7 +460,7 @@ timerNav.links.forEach(function (link) {
   });
 });
 
-},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/timer":"28m7h","./component/music-player":"3o3lM"}],"5dOJi":[function(require,module,exports) {
+},{"./component/navigation":"5dOJi","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/timer":"28m7h","./component/music-player":"3o3lM","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 class Navigation {
@@ -539,8 +539,7 @@ const form = document.getElementById("taskform");
 const button = document.querySelector("#taskform > button")
 var taskInput = document.getElementById("taskInput");
 
-var tasklist = document.getElementById("tasklist");
-var doitTasks = document.getElementById("doitTasks"); //do-it-tasks
+let tasklist;
 var scheduleTasks = document.getElementById("scheduleTasks"); //schedule-tasks
 var relegateTasks = document.getElementById("relegateTasks"); //relegate-tasks
 var dontdoTasks = document.getElementById("dontdoTasks"); //dont-do-tasks
@@ -559,7 +558,6 @@ form.addEventListener("submit", function(event){
     let priorityRating = priorityInput.options[priorityInput.selectedIndex].value;
     if (task) {
         addTask(task, dueDate, estimatedTime, priorityRating, completionTime, false); 
-        console.log(tasklist);
     }
 })
 
@@ -614,8 +612,7 @@ function renderTask(task){
     delButton.classList.add('delete-btn');
     taskDiv.appendChild(delButton);
 
-    // Append 
-    tasklist.appendChild(taskDiv);
+
 
 
     // Event Listeners for DOM elements
@@ -639,6 +636,46 @@ function renderTask(task){
       let taskDiv = event.target.parentElement;
       taskDiv.classList.toggle("completed");
     })  
+
+    // Extract the due date and priority from the task
+    // Compare the due date to current date
+    // Conditionally assign the urgency based on date comparison
+    // --> If (dueDate - currentDate) < X THEN URGENT
+    // --> If (dueDate - currentDate) > X THEN NOT URGENT
+    // assign the importance based on the priority rating
+
+    let currentDate = new Date();
+    let taskDueDate = new Date(task.dueDate);
+    let taskPriority = task.priorityRating;
+
+    let dateDiff = days_between(currentDate,taskDueDate);
+    let urgencyValue = 5;
+    
+
+    if (dateDiff > urgencyValue) {
+
+      console.log("Not urgent");
+      if (taskPriority == "" || taskPriority == "Low") {
+        console.log("Don't do");
+        tasklist = document.getElementById("dont-do");
+      } else {
+        console.log("Schedule");
+        tasklist = document.getElementById("schedule");
+      }
+    } else {
+      console.log("Urgent");
+      if (taskPriority == "" || taskPriority == "Low") {
+        console.log("Relegate");
+        tasklist = document.getElementById("relegate");
+      } else {
+        console.log("Do it");
+        tasklist = document.getElementById("do-it");
+      }
+    }
+
+
+    // Append 
+    tasklist.appendChild(taskDiv);
 
     // Clear the input form
     form.reset();  
@@ -688,6 +725,21 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+function days_between(date1, date2) {
+
+  // The number of milliseconds in one day
+  const ONE_DAY = 1000 * 60 * 60 * 24;
+
+  // Calculate the difference in milliseconds
+  const differenceMs = Math.abs(date1 - date2);
+
+  // Convert back to days and return
+  return Math.round(differenceMs / ONE_DAY);
+
+}
+// Function adapted from https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
 },{}],"4P7Sk":[function(require,module,exports) {
 let input = document.querySelector('#input');
 let searchBtn = document.querySelector('#search');

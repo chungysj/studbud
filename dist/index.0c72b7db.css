@@ -113,8 +113,7 @@ button {
   display: grid;
   grid-template-columns: -webkit-max-content;
   grid-template-columns: max-content;
-  grid-template-rows: -webkit-max-content;
-  grid-template-rows: max-content;
+  grid-template-rows: 100px minmax(30px, 280px) minmax(30px, 280px);
   gap: 0px 0px;
   grid-template-areas: "space urgent not-urgent" "important cards cards" "not-important cards cards";
   grid-area: quadrants;
@@ -162,7 +161,7 @@ button {
 .cards .task-cards {
   border-radius: 30px;
   padding: 40px;
-  overflow: scroll;
+  overflow-y: auto;
 }
 .cards .do-it-card {
   grid-area: do-it-card;
