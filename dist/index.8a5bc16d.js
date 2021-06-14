@@ -695,6 +695,12 @@ function updateEmpty() {
     } else {
         document.querySelector('.emptyList').style.display = 'block';
     }
+
+    // if (tasklist = document.getElementById("dont-do").ul().length == 0 )){
+    //   document.querySelector('.emptyList').style.display = 'none';
+    // } else {
+    //     document.querySelector('.emptyList').style.display = 'block';
+    // }
   }
 
 // Get the modal
@@ -738,6 +744,8 @@ function days_between(date1, date2) {
 }
 // Function adapted from https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
 },{}],"4P7Sk":[function(require,module,exports) {
+// Adaped and learnt from https://www.youtube.com/watch?v=KlLdNSvmoKI&ab_channel=Coder%27sGyan
+// Dictionary API and registered Key from https://dictionaryapi.com/products/index
 let input = document.querySelector('#input');
 let searchBtn = document.querySelector('#search');
 let apiKey = '0f21b45e-307b-4c84-bdbf-aadcb1878967';
@@ -807,8 +815,6 @@ async function getData(word) {
         synsBox.innerText = "Synonyms not found..";
         
     }
-
-    
 
     console.log(data);
 }

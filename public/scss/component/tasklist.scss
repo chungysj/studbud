@@ -60,6 +60,142 @@
     flex: 1;
 }
 
+.header-item {
+    color: #142348;
+    font-weight: 700;
+}
+  
+.header { 
+    display: flex;
+    align-items: center;
+    .header-item {
+        font-size: 30px;
+        margin-right: 100px;
+    }
+    .dark-blue-btn { 
+        background: #142348;
+        padding: 11px 40px;
+        border: 2px solid #142348;
+    }
+    .dark-blue-btn:hover {
+        background: transparent;
+        color: #142348;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+}
+  
+.task {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 65px 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "task-header" "quadrants";
+    grid-area: task;
+}
+  
+.fa-plus, .fa-check-circle, .fa-clock, .fa-user-plus, .fa-trash-alt{
+    margin-right: 20px;
+}
+  
+.task-header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+  
+.quadrants {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-template-rows: 100px minmax(30px, 450px) minmax(30px, 300px);
+    gap: 0px 0px;
+    grid-template-areas:
+        "space urgent not-urgent" "important cards cards" "not-important cards cards";
+    grid-area: quadrants;
+    background-color: #ffff;
+    border-radius: 30px; 
+    padding-bottom: 50px;
+}
+
+.space { 
+    grid-area: space; 
+}
+
+.urgent, .not-urgent, .important, .not-important {
+    text-align: center;
+}
+
+.urgent { 
+    grid-area: urgent; 
+}
+
+.not-urgent { 
+    grid-area: not-urgent; 
+}
+
+.important { 
+    grid-area: important;
+}
+
+.not-important { 
+    grid-area: not-important;
+}
+
+.urgent, .not-urgent{
+    padding: 30px 0px 15px;  // top, right/left, bottom
+}
+  
+.important, .not-important {
+    // Chrome doesnt support CSS writing-mode: sideways-lr but accepts vertical 
+    // So I used to transform rotate to create what I wanted
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    padding: 15px;
+    margin-top: 50px;
+}
+
+// quadrants cards layout
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 35px 35px;
+    grid-template-areas:
+        "do-it-card schedule-card" "relegate-card dont-do-card";
+    grid-area: cards;
+    padding-right: 50px; 
+
+    .task-cards {
+        border-radius: 30px;  
+        padding: 40px;
+        overflow-y: auto;
+    }
+    .do-it-card { 
+        grid-area: do-it-card;
+        background-color: #edf7ff;
+    }
+
+    .schedule-card { 
+        grid-area: schedule-card;
+        background-color: #f1e9f8;
+    }
+
+    .relegate-card { 
+        grid-area: relegate-card; 
+        background-color: #fdedf0;
+    }
+
+    .dont-do-card { 
+        grid-area: dont-do-card;
+        background-color: #fff5f1;
+    }
+}
+
+// quadrants lasts buttons
 .delete-btn, .complete-btn {
     background: coral;
     color: white;

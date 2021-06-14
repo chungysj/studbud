@@ -1,38 +1,52 @@
+// Reference - https://codepen.io/huange/pen/rbqsD
+// Resize the dictionary-form-wrap to see the search bar change
 .dictionary-form-wrap {
-    border: 1px solid #ddd;
-    display: flex;
-    margin-top: 20px;
-    border-radius: 50px;
+    width: 100%;
+    margin-top: 15px;
+}
+.search-container {
+    position: relative;
+    display: flex;    
+    border: 2px solid lightgray;
+    border-radius: 30px;
+}
 
-    input{
-        border: none;
-        outline: none;
-        font-size: 20px;
-    }
-    .search-btn{
-        background: transparent;
-        border: none;
-        color: lightgray;
-        height: 100%;
-        cursor: pointer;
-        margin-left: 10px;
-    }
+#input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 5px;
+    outline: none;
+    color: grey;
+    font-size: 20px;
+}
+
+.search-btn{
+    height: 45px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    color: lightgray;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .dictionary-form-wrap input::placeholder {
-    color: rgb(182, 178, 178);
-  }
+    color: lightgray;
+}
 
 section.data {
     max-width: 600px;
+    max-height: 220px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .loading {
     display: none;
 }
-
 
 .suggested {
     background: #142348;
@@ -42,4 +56,9 @@ section.data {
     margin-right: 10px;
     margin-top: 5px;
     display: inline-block;
+}
+
+.bold {
+    margin-top: 0;
+    font-weight: 500;
 }

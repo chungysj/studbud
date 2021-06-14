@@ -21,3 +21,13 @@
         }
     }
 }
+
+.timer-page-container {
+    margin: 4em;
+    &#pomodoro {
+      text-align: center;
+    }
+    &:not(#pomodoro) {
+      display: none;
+    }
+  }
