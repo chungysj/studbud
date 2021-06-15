@@ -17,7 +17,7 @@ html {
 }
 
 .grid-container {
-  padding: 50px 50px 70px 50px;   // top, right, bottom, left
+  padding: 50px 50px 50px 50px;   // top, right, bottom, left
   display: grid;
   grid-template-columns: 0.9fr 1.18fr;
   grid-template-rows: 65px 65px 1.8fr;
@@ -26,6 +26,7 @@ html {
     "header ." ". task" "features task";
   width: 100vw;
   height: 100vh;
+  justify-content: center; 
 }
 
 .features {
@@ -40,7 +41,8 @@ html {
 .timer { 
   grid-area: timer;
   background-color: #ffff;
-  border-radius: 30px;  
+  border-radius: 30px; 
+  padding: 15px 40px 40px 40px;
 }
 
 .music, .dictionary { 
