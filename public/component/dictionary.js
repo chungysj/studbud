@@ -1,4 +1,5 @@
 // Adaped and learnt from https://www.youtube.com/watch?v=KlLdNSvmoKI&ab_channel=Coder%27sGyan
+
 // Dictionary API and registered Key from https://dictionaryapi.com/products/index
 let input = document.querySelector('#input');
 let searchBtn = document.querySelector('#search');
