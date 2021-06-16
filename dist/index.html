@@ -13,7 +13,6 @@
 </head>
 
 <body class="app-container">
-	
 	<div class="grid-container">
 		<div class="header">
 		  <div class="header-item">
@@ -23,7 +22,6 @@
 			<button class="dark-blue-btn">Instruction</button>
 		  </div>
 		</div>
-
 		<div class="features">
 		  <div class="timer">
 			<nav class="timer-nav">
@@ -89,6 +87,55 @@
 			</div>
 		  </div>
 		  <div class="music">
+			  <!-- The music player doesnt work on npm run dev?? with error message "Uncaught (in promise) DOMException: The element has no supported sources." -->
+			  <!-- I know it works becuase i made the music player in another vscode and it worked perfectly fine when I click go live without npm run dev. But when I pasted the code into the studbud file and ran the code with npm run dev it doesnt work :(((()))) -->
+			<div class="wrapper">
+				<div class="song-container">
+				  <div class="song-img-box">
+					<div class="img-area">
+					  <img src="/index.html" alt="">
+					</div>
+				  </div>
+				  <div class="song-bio-box">
+					<div class="song-details">
+					  <p class="name"></p>
+					  <p class="artist"></p>
+					</div>
+				  </div>
+				</div>
+				<div class="process-container">
+					<div class="progress-area">
+						<div class="progress-bar">
+							<audio id="main-audio" src="/index.html"></audio>
+						</div>
+						<div class="song-timer">
+							<span class="current-time">0:00</span>
+							<span class="max-duration">0:00</span>
+						</div>
+					</div>
+				</div>
+				<div class="music-controls">
+				  <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+				  <i id="prev" class="material-icons">skip_previous</i>
+				  <div class="play-pause">
+					<i class="material-icons music-play">play_arrow</i>
+				  </div>
+				  <i id="next" class="material-icons">skip_next</i>
+				  <i id="more-music" class="material-icons">queue_music</i>
+				</div>
+				<div class="music-list">
+				  <div class="music-list-header">
+					<div class="music-list-row">
+					  <i class="list material-icons">queue_music</i>
+					  <span>Music list</span>
+					</div>
+					<i id="music-list-close" class="material-icons">close</i>
+				  </div>
+				  <ul>
+					<!-- li list are coming from js -->
+				  </ul>
+				</div>
+			  </div>					
 		  </div>
 		  <div class="dictionary">
 				<h2>Dictionary</h2>
@@ -197,6 +244,6 @@
 	</div>
 	
 <script src="/index.8a5bc16d.js"></script>
-</body>
 
+</body>
 </html>
