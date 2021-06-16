@@ -68,9 +68,9 @@
 .header { 
     display: flex;
     align-items: center;
+    justify-content: space-between;
     .header-item {
         font-size: 30px;
-        margin-right: 100px;
     }
     .dark-blue-btn { 
         background: #142348;
@@ -111,7 +111,7 @@
 .quadrants {
     display: grid;
     grid-template-columns: max-content;
-    grid-template-rows: 100px minmax(30px, 450px) minmax(30px, 300px);
+    grid-template-rows: 100px minmax(30px, 100%) minmax(30px, 100%);
     gap: 0px 0px;
     grid-template-areas:
         "space urgent not-urgent" "important cards cards" "not-important cards cards";
@@ -216,3 +216,4 @@
 .fa-trash, .fa-check {
     pointer-events: none;
 }
+

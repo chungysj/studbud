@@ -789,6 +789,7 @@ async function getData(word) {
 
     // If result is suggestions
     if (typeof data[0] === 'string') {
+        loading.style.display = 'none';
         let heading = document.createElement('h5');
         heading.innerText = ' Did you mean?'
         notFound.appendChild(heading);

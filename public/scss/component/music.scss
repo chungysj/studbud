@@ -7,7 +7,6 @@
     height: 100%;
     overflow: hidden;
     position: relative;
-    border: 1px solid black;
     i {
         cursor: pointer;
     }
@@ -47,7 +46,7 @@
 .song-details {
     margin-top: 25px;  
     p {
-        color: black;
+        color: #142348;
         text-align: center;
     }
     .name{
@@ -100,7 +99,7 @@
 }
 .song-timer span{
     font-size: 13px;
-    color: black;
+    color: #142348;
     margin-top: 5px;
 }
 .music-controls{
@@ -108,7 +107,7 @@
     i {
         font-size: 28px;
         user-select: none;
-        background: black;
+        background: #142348;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -151,7 +150,7 @@
     background-color: rgb(247, 199, 39);
 }
 .material-icons {
-    color: black;
+    color: #142348;
 }
 #music-list-close:hover {
     color: rgb(247, 199, 39);
@@ -180,7 +179,7 @@
     z-index: 5;
     padding: 15px 30px;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid #142348;
     transition: all 0.15s ease-out;
     background-color: white;
     .show{
@@ -194,7 +193,7 @@
     display: flex;
     align-items: center;
     font-size: 19px;
-    color: black;
+    color: #142348;
     i {
         cursor: default;
     }
@@ -205,7 +204,7 @@
 
 .music-list-header #music-list-close {
     font-size: 22px;
-    color: black;
+    color: #142348;
 }
 .music-list ul {
     margin: 10px 0;
@@ -218,7 +217,7 @@
     cursor: pointer;
     padding-bottom: 10px;
     margin-bottom: 5px;
-    color: black;
+    color: #142348;
     border-bottom: 1px solid #E5E5E5;
     :last-child{
         border-bottom: 0px;
@@ -238,4 +237,84 @@ ul li .audio-duration{
 ul li.playing{
     pointer-events: none;
     color: rgb(247, 199, 39);
+}
+
+
+@media only screen and (max-width: 1512px) {
+    .song-container {
+        height: 300px;
+    }
+    .song-img-box {
+        width: 70%;
+    }
+    .song-bio-box {
+        width: 70%;
+    }
+    .song-details {
+         margin-top: 3%;
+        .name {
+            font-size: 40px;
+        }
+        .artist {
+            font-size: 20px;
+        }
+    }
+    .process-container {
+        margin-top: 3%;
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    .song-details {
+        margin-top: 30%;
+       .name {
+           font-size: 20px;
+       }
+       .artist {
+           font-size: 8px;
+       }
+   }
+}
+
+@media only screen and (max-width: 490px) {
+    .music {
+        padding: 35px;
+    }
+    .song-container {
+        height: 200px;
+    }
+    .song-details {
+        margin-top: 45px;
+       .name {
+           font-size: 18px;
+       }
+       .artist {
+           font-size: 6px;
+       }
+   }
+    .process-container {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .song-container {
+        height: 130px;
+    }
+    .song-details {
+        margin-top: 10px;
+       .name {
+           font-size: 6px;
+       }
+       .artist {
+           font-size: 1px;
+       }
+       .name, .artist {
+           margin: 0%;
+       }
+   }
+    .process-container {
+        margin-top: 20px;
+    }
 }

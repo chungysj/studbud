@@ -77,6 +77,28 @@ button {
   background: #bababa;
   border: none;
 }
+@media (max-width: 1024px) {
+  html {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+
+  .grid-container {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    display: block;
+  }
+
+  .header {
+    padding-bottom: 50px;
+  }
+
+  .features {
+    display: block;
+  }
+}
 html {
   font-size: 100%;
 }
@@ -119,21 +141,21 @@ small, .text_small {
   width: 100%;
   background-color: transparent;
   display: flex;
-  padding: 0;
-  margin: 0%;
   margin-bottom: 15px;
 }
 .timer-nav .timer-links {
   list-style: none;
+  list-style-type: none;
   display: flex;
+  padding-right: 40px;
   padding: 0;
-  margin: 0%;
+  margin: 0;
 }
 .timer-nav .timer-links .timer-nav-item a {
   display: inline-block;
   text-decoration: none;
+  padding: 0 20px;
   color: #123;
-  padding: 0em 2.2em 0em 0em;
   font-size: 1.563rem;
   font-weight: 200;
 }
@@ -214,10 +236,10 @@ small, .text_small {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .header .header-item {
   font-size: 30px;
-  margin-right: 100px;
 }
 .header .dark-blue-btn {
   background: #142348;
@@ -251,7 +273,7 @@ small, .text_small {
   display: grid;
   grid-template-columns: -webkit-max-content;
   grid-template-columns: max-content;
-  grid-template-rows: 100px minmax(30px, 450px) minmax(30px, 300px);
+  grid-template-rows: 100px minmax(30px, 100%) minmax(30px, 100%);
   gap: 0px 0px;
   grid-template-areas: "space urgent not-urgent" "important cards cards" "not-important cards cards";
   grid-area: quadrants;
@@ -334,6 +356,12 @@ small, .text_small {
 .fa-trash, .fa-check {
   pointer-events: none;
 }
+@media (max-width: 800px) {
+  .header-item {
+    margin: 0px;
+    padding: 0px;
+  }
+}
 .dictionary-form-wrap {
   width: 100%;
   margin-top: 15px;
@@ -372,7 +400,6 @@ small, .text_small {
   color: lightgray;
 }
 section.data {
-  max-width: 600px;
   max-height: 220px;
   margin: 0 auto;
   margin-top: 15px;
@@ -411,6 +438,7 @@ section.data {
 }
 .pomodoro-container .time {
   margin: 0 20px 20px 0;
+  justify-content: center;
 }
 .pomodoro-container .time .line {
   height: 7px;
@@ -422,6 +450,7 @@ section.data {
   font-weight: bold;
   color: #142348;
   margin: 0;
+  text-align: center;
 }
 .pomodoro-container .time h3 {
   margin: 0;
