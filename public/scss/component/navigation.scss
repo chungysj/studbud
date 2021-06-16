@@ -16,12 +16,13 @@
             color: #123;
             padding: 0em 2.2em 0em 0em;
             font-size: 1.563rem;
-            font-weight: 500;
+            font-weight: 200;
             &:hover {
                 color: #abc;
             }
-            &:active {
+            &.active {
                 font-weight: bolder;
+                color: #123;
             }
         }
     }

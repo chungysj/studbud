@@ -62,6 +62,22 @@ button {
   color: #65adfc;
   transition: all 0.4s;
 }
+.mainBtns {
+  height: 50px;
+  width: 130px;
+  outline: none;
+  font-size: 25px;
+  background-color: #142348;
+  color: white;
+  border-radius: 30px;
+}
+.mainBtns:hover, .pomo-setting-btn:hover {
+  opacity: 0.7;
+}
+#stopwatch-reset-button, #pomo-reset-button {
+  background: #bababa;
+  border: none;
+}
 html {
   font-size: 100%;
 }
@@ -120,13 +136,14 @@ small, .text_small {
   color: #123;
   padding: 0em 2.2em 0em 0em;
   font-size: 1.563rem;
-  font-weight: 500;
+  font-weight: 200;
 }
 .timer-nav .timer-links .timer-nav-item a:hover {
   color: #abc;
 }
-.timer-nav .timer-links .timer-nav-item a:active {
+.timer-nav .timer-links .timer-nav-item a.active {
   font-weight: bolder;
+  color: #123;
 }
 .timer-page-container#pomodoro {
   text-align: center;
@@ -383,6 +400,7 @@ section.data {
   display: flex;
   width: 100%;
   height: 100%;
+  flex-direction: row;
   /* pomodoro timer digits */
   /* pomodoro start pause reset buttons */
   /* pomodoro edit sessions and breaks */
@@ -393,7 +411,7 @@ section.data {
   width: 100%;
 }
 .pomodoro-container .time {
-  margin: 0 20px 20px 20px;
+  margin: 0 20px 20px 0;
 }
 .pomodoro-container .time .line {
   height: 7px;
@@ -414,6 +432,7 @@ section.data {
 }
 .pomodoro-container .pomo-controller {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   bottom: 0px;
 }
@@ -440,6 +459,7 @@ section.data {
 }
 .pomodoro-container .pomo-setting-container .session, .pomodoro-container .pomo-setting-container .break {
   display: flex;
+  flex-direction: row;
   font-size: 20px;
   font-weight: bold;
   color: #142348;
@@ -461,19 +481,12 @@ section.data {
   color: white;
   border-radius: 100%;
 }
-.pomodoro-container .mainBtns {
-  height: 50px;
-  width: 120px;
-  outline: none;
-  font-size: 18px;
-  background-color: #142348;
-  color: white;
-  border-radius: 30px;
-}
-.pomodoro-container .mainBtns:hover, .pomodoro-container .pomo-setting-btn:hover {
-  opacity: 0.7;
-}
-@media only screen and (max-width: 600px) {
+@media (max-width: 800px) {
+  .pomo-setting-container {
+    display: row;
+    width: 100%;
+  }
+
   .pomodoro-container {
     flex-direction: column;
   }
@@ -483,33 +496,52 @@ section.data {
     font-weight: bold;
   }
 
-  .sBtn, .rBtn, .pBtn {
-    height: 30px;
-    width: 120px;
+  .pomo-setting-flex {
+    margin: 20px 15px 0 15px;
   }
-
-  .pomo-setting-container {
-    flex-direction: row;
-  }
-  .pomo-setting-container .pomo-setting-flex {
-    margin: 0 15px;
-  }
-  .pomo-setting-container .session, .pomo-setting-container .break {
+  .pomo-setting-flex .session, .pomo-setting-flex .break {
     margin: 0;
     width: 200px;
   }
-  .pomo-setting-container .pomo-setting-btn {
+  .pomo-setting-flex .pomo-setting-btn {
     height: 25px;
     width: 25px;
     font-size: 20px;
   }
-
-  .mainBtns {
+  .pomo-setting-flex .mainBtns {
     height: 50px;
-    width: 100px;
+    width: 120px;
     outline: none;
     font-size: 20px;
-    border-radius: 5px;
+  }
+}
+#stopwatch {
+  width: 100%;
+  height: 80%;
+}
+.stopwatch-container {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  flex: 1 1 auto;
+}
+.stopwatch {
+  font-family: "Maven Pro", sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #142348;
+}
+.stopwatch-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+@media (max-width: 600px) {
+  .stopwatch span {
+    font-size: 50px;
+    font-weight: bold;
   }
 }
 /*# sourceMappingURL=index.0c72b7db.css.map */

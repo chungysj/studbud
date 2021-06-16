@@ -81,3 +81,20 @@ button {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
+
+.mainBtns {
+  height: 50px;
+  width: 130px;
+  outline:none;
+  font-size: 25px;
+  background-color: #142348;
+  color: white;
+  border-radius: 30px;
+}
+.mainBtns:hover, .pomo-setting-btn:hover {
+  opacity: 0.7;
+}
+#stopwatch-reset-button, #pomo-reset-button{
+  background: rgb(186, 186, 186);
+  border: none;
+}

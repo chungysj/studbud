@@ -1,8 +1,9 @@
 import Navigation from './component/navigation';
 import './component/tasklist';
 import './component/dictionary';
-import './component/timer';
-import './component/music-player';
+import './component/pomodoro';
+import './component/stopwatch';
+import './component/music';
 
 const links = document.querySelectorAll('.timer-nav > ul > li > a');
 const pages = document.querySelectorAll('.timer-page-container');

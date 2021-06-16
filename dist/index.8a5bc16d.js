@@ -447,7 +447,8 @@ var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 var _componentNavigationDefault = _parcelHelpers.interopDefault(_componentNavigation);
 require('./component/tasklist');
 require('./component/dictionary');
-require('./component/timer');
+require('./component/pomodoro');
+require('./component/stopwatch');
 require('./component/music-player');
 const links = document.querySelectorAll('.timer-nav > ul > li > a');
 const pages = document.querySelectorAll('.timer-page-container');
@@ -460,7 +461,7 @@ timerNav.links.forEach(function (link) {
   });
 });
 
-},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/timer":"28m7h","./component/music-player":"3o3lM"}],"5dOJi":[function(require,module,exports) {
+},{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/music-player":"3o3lM","./component/stopwatch":"i4jdM","./component/pomodoro":"4rDpH"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 class Navigation {
@@ -816,21 +817,71 @@ async function getData(word) {
 
     console.log(data);
 }
-},{}],"28m7h":[function(require,module,exports) {
+},{}],"3o3lM":[function(require,module,exports) {
+
+},{}],"i4jdM":[function(require,module,exports) {
+// Reference - learnt from = Chris (2021). stopwatch using javascript - accurate and easy. [online] dev.to. Available at: https://dev.to/chrislemus/stopwatch-using-javascript-accurate-and-easy-5ado
+
+const swTime = document.querySelector('.stopwatch')
+const swMainButton = document.querySelector('#stopwatch-main-button')
+const clearButton = document.querySelector('#stopwatch-reset-button')
+const stopwatch = { elapsedTime: 0 }
+
+swMainButton.addEventListener('click', () => {
+  if (swMainButton.innerHTML === 'Start') {
+    startStopwatch();
+    swMainButton.innerHTML = 'Stop'
+  } else {
+    stopwatch.elapsedTime += Date.now() - stopwatch.startTime
+    clearInterval(stopwatch.intervalId)
+    swMainButton.innerHTML = 'Start'
+  }
+})
+
+clearButton.addEventListener('click', () => {
+  stopwatch.elapsedTime = 0
+  stopwatch.startTime = Date.now()
+  displayTime(0, 0, 0, 0)
+})
+
+function startStopwatch() {
+  //reset start time
+  stopwatch.startTime = Date.now();
+  //run `setInterval()` and save id
+  stopwatch.intervalId = setInterval(() => {
+    //calculate elapsed time
+    const elapsedTime = Date.now() - stopwatch.startTime + stopwatch.elapsedTime
+    //calculate different time measurements based on elapsed time
+    const milliseconds = parseInt((elapsedTime%1000)/10)
+    const seconds = parseInt((elapsedTime/1000)%60)
+    const minutes = parseInt((elapsedTime/(1000*60))%60)
+    const hour = parseInt((elapsedTime/(1000*60*60))%24);
+    //display time
+    displayTime(hour, minutes, seconds, milliseconds)
+  }, 100);
+}
+
+function displayTime(hour, minutes, seconds, milliseconds) {
+  const leadZeroTime = [hour, minutes, seconds, milliseconds].map(swTime => swTime < 10 ? `0${swTime}` : swTime)
+  swTime.innerHTML = leadZeroTime.join(':')
+}
+
+
+},{}],"4rDpH":[function(require,module,exports) {
 // Reference - learnt from = nehasoni05 (2021). Pomodoro-Clock. [online] Github. Available at: https://github.com/nehasoni05/Pomodoro-Clock
-var startBtn=document.getElementById("startButton");
-var resetBtn=document.getElementById("resetButton");
+var startBtn=document.getElementById("pomo-start-button");
+var resetBtn=document.getElementById("pomo-reset-button");
 var increaseSession=document.getElementById("plusSession");
 var decreaseSession=document.getElementById("minusSession");
 var increaseBreak=document.getElementById("plusBreak");
 var decreaseBreak=document.getElementById("minusBreak");
-var pauseBtn=document.getElementById("pauseButton");
-var continueBtn=document.getElementById("continueButton");
+var pauseBtn=document.getElementById("pomo-pause-button");
+var continueBtn=document.getElementById("pomo-continue-button");
 var heading=document.getElementById("pomo-text");
 var timerName;
 var count=0;
 
-
+// Increase sessions
 increaseSession.addEventListener("click",function(){
     var stime=document.getElementById("STIME");
     var btime=document.getElementById("BTIME").innerHTML;
@@ -843,6 +894,7 @@ increaseSession.addEventListener("click",function(){
     stime.innerHTML=min+" min";
 })
 
+// Decrease sessions
 decreaseSession.addEventListener("click",function(){
     var stime=document.getElementById("STIME");
     var disptime=document.getElementById("TIME").innerHTML;
@@ -863,6 +915,7 @@ decreaseSession.addEventListener("click",function(){
     stime.innerHTML=min+" min";
 })
 
+// Increase breaks
 increaseBreak.addEventListener("click",function(){
     var btime=document.getElementById("BTIME");
     var breaktime=document.getElementById("BTIME").innerHTML;
@@ -871,6 +924,8 @@ increaseBreak.addEventListener("click",function(){
     min=min+1;
     btime.innerHTML=min+" min";
 })
+
+// Decrease breaks
 decreaseBreak.addEventListener("click",function(){
     var btime=document.getElementById("BTIME");
     var breaktime=document.getElementById("BTIME").innerHTML;
@@ -881,6 +936,7 @@ decreaseBreak.addEventListener("click",function(){
     btime.innerHTML=min+" min";
 })
 
+// start button event listener
     startBtn.addEventListener("click",function()
     {
     var SBTN=document.getElementById("SBTN");
@@ -960,8 +1016,9 @@ continueBtn.addEventListener("click",function()
 // Resets the pomodoro timer but i couldnt make it relaod only the div
 // I tried document.getElementById("pomodoro-container").reload(); but it doesn't work.
 // So i just left it to reset the whole page instead
-resetBtn.addEventListener("click",function(){
-window.location.reload();
+resetBtn.addEventListener("click",function()
+{
+    window.location.reload();
 })
 
 function checkMinute(min)
@@ -988,7 +1045,7 @@ console.log("return time"+sec);
 return sec;
 }    
 
-
+// Break
 function breakTime()
 {
     var bMin=document.getElementById("BTIME").innerHTML;
@@ -1018,6 +1075,7 @@ function startBreak()
         min="0"+min;
     }
     changedisptime.innerHTML=min+":"+sec;
+    // if session and breaks are done alert done message
     if(min==00 && sec==00)
     {
         heading.innerHTML="Start";
@@ -1029,8 +1087,6 @@ function startBreak()
     }
     timerName=setTimeout(startBreak,1000);
 }
-
-},{}],"3o3lM":[function(require,module,exports) {
 
 },{}]},["27Rzb","4OAbU"], "4OAbU", "parcelRequirec526")
 

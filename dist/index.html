@@ -43,18 +43,18 @@
 						<div class="pomo-controller">
 							<div class="sBtn" id="SBTN" style="display:block
 "> 
-								<button id="startButton" class="mainBtns">Start</button> 
+								<button id="pomo-start-button" class="mainBtns">Start</button> 
 							</div>
 							<div class="sBtn" id="PBTN" style="display:none
 "> 
-								<button id="pauseButton" class="mainBtns">Pause</button> 
+								<button id="pomo-pause-button" class="mainBtns">Pause</button> 
 							</div>
 							<div class="sBtn" id="CBTN" style="display:none
 "> 
-								<button id="continueButton" class="mainBtns">Resume</button> 
+								<button id="pomo-continue-button" class="mainBtns">Resume</button> 
 							</div>
 							<div class="rBtn"> 
-								<button id="resetButton" class="mainBtns">Reset</button> 
+								<button id="pomo-reset-button" class="mainBtns">Reset</button> 
 							</div>
 						</div>
 					</div>
@@ -78,9 +78,14 @@
 					</div>
 				</div>
 			</div>
-		
 			<div id="stopwatch" class="timer-page-container">
-				<h2>stopwatch</h2>
+				<div class="stopwatch-container">
+					<span class="stopwatch">00:00:00:00</span>
+					<div class="stopwatch-controls">
+					  <button id="stopwatch-main-button" class="mainBtns">Start</button>
+					  <button id="stopwatch-reset-button" class="mainBtns">Clear</button>
+					</div>
+				</div>
 			</div>
 		  </div>
 		  <div class="music">
