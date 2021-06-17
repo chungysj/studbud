@@ -450,6 +450,7 @@ require('./component/dictionary');
 require('./component/pomodoro');
 require('./component/stopwatch');
 require('./component/music');
+// Reference from from Rob Dongas class tutorial walkthrough
 const links = document.querySelectorAll('.timer-nav > ul > li > a');
 const pages = document.querySelectorAll('.timer-page-container');
 var timerNav = new _componentNavigationDefault.default(links, pages);
@@ -460,7 +461,7 @@ timerNav.links.forEach(function (link) {
     timerNav.setPage(pageId);
   });
 });
-// multiple modals reference from = https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page
+// Multiple modals reference from = https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page
 // Get the modal
 var modal = document.getElementsByClassName('modal');
 // Get the button that opens the modal
@@ -494,6 +495,7 @@ window.onclick = function (event) {
 },{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/stopwatch":"i4jdM","./component/pomodoro":"4rDpH","./component/music":"5PuhK"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
+// Reference from from Rob Dongas class tutorial walkthrough
 class Navigation {
   constructor(links, pages) {
     this.links = links;
@@ -566,9 +568,16 @@ exports.export = function (dest, destName, get) {
   });
 };
 },{}],"1PYKt":[function(require,module,exports) {
+// Reference from from Rob Dongas class tutorial walkthrough
+//Define Variables
 const form = document.getElementById("taskform");
 const button = document.querySelector("#taskform > button")
 var taskInput = document.getElementById("taskInput");
+
+var doIt = document.getElementById("do-it");
+var schedule = document.getElementById("schedule");
+var relegate = document.getElementById("relegate");
+var dontDo = document.getElementById("dont-do");
 
 let tasklist;
 
@@ -663,6 +672,7 @@ function renderTask(task){
       taskDiv.classList.toggle("completed");
     })  
 
+// help and assist from Rob Dongas
     // Extract the due date and priority from the task
     // Compare the due date to current date
     // Conditionally assign the urgency based on date comparison
@@ -679,26 +689,24 @@ function renderTask(task){
     
 
     if (dateDiff > urgencyValue) {
-
       console.log("Not urgent");
       if (taskPriority == "" || taskPriority == "Low") {
         console.log("Don't do");
-        tasklist = document.getElementById("dont-do");
+        tasklist = dontDo;
       } else {
         console.log("Schedule");
-        tasklist = document.getElementById("schedule");
+        tasklist = schedule;
       }
     } else {
       console.log("Urgent");
       if (taskPriority == "" || taskPriority == "Low") {
         console.log("Relegate");
-        tasklist = document.getElementById("relegate");
+        tasklist = relegate;
       } else {
         console.log("Do it");
-        tasklist = document.getElementById("do-it");
+        tasklist = doIt;
       }
     }
-
 
     // Append 
     tasklist.appendChild(taskDiv);
@@ -719,17 +727,31 @@ function renderTask(task){
 // Make sure this makes sense for the user, and it doesnt tell them they havent added tasks, when they clearly have 
 // Add in a function to update this depending on if theres a task in the array or not 
 function updateEmpty() {
-    if (taskListArray.length > 0){
-      document.querySelector('.emptyList').style.display = 'none';
-    } else {
-        document.querySelector('.emptyList').style.display = 'block';
-    }
-
-    // if (tasklist = document.getElementById("dont-do").ul().length == 0 )){
-    //   document.querySelector('.emptyList').style.display = 'none';
-    // } else {
-    //     document.querySelector('.emptyList').style.display = 'block';
-    // }
+  if (taskListArray.length > 0){
+    document.querySelector('.emptyList').style.display = 'none';
+  } else {
+      document.querySelector('.emptyList').style.display = 'block';
+  }
+  // if (doIt.length > 0) {
+  //   document.querySelector('.emptyList').style.display = 'none';
+  // } else {
+  //   document.querySelector('.emptyList').style.display = 'block';
+  // }
+  // if (schedule.length > 0) {
+  //   document.querySelector('.emptyList').style.display = 'none';
+  // } else {
+  //     document.querySelector('.emptyList').style.display = 'block';
+  // }
+  // if (relegate.length > 0) {
+  //   document.querySelector('.emptyList').style.display = 'none';
+  // } else {
+  //     document.querySelector('.emptyList').style.display = 'block';
+  // }
+  // if (dontDo.length > 0) {
+  //   document.querySelector('.emptyList').style.display = 'none';
+  // } else {
+  //     document.querySelector('.emptyList').style.display = 'block';
+  // }
   }
 
 
@@ -1103,6 +1125,10 @@ function startBreak()
 // downloaded youtube and convert to mp3 using - https://yt1s.com/en6
 
 // I translated the song names to english
+// The music player doesnt work on npm run dev - with error message "Uncaught (in promise) DOMException: The element has no supported sources."
+// I know it works becuase i made the music player first in another vscode and it worked perfectly fine when I click go live without npm run dev. 
+// But when I paste the code into the studbud file and ran the code with npm run dev it doesnt work :(
+  // if you know the reason why can you please leave feedback or comment on why and how to make it work, because I want to put it in my portfolio so I want to make it work in the future :) thanks 
 let allMusic = [
   {
     name: "A Town with an ocean View (Jazz Ver)",

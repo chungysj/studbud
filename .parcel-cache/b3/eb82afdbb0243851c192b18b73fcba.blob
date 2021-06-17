@@ -146,7 +146,7 @@ button {
   right: 30px;
   top: 30px;
 }
-.closeBtn:hover, .fa-times:hover, .closeBtn:focus {
+.closeBtn:hover, .closeBtn:focus {
   color: #65adfc;
   text-decoration: none;
   cursor: pointer;
@@ -227,19 +227,8 @@ button {
   }
 }
 @media only screen and (max-width: 570px) {
-  .header {
-    padding-bottom: 30px;
-  }
-  .header h1 {
-    font-size: 35px;
-  }
-  .header .dark-blue-btn {
-    font-size: 10px;
-    font-weight: 500;
-  }
-
   .grid-container {
-    padding: 20px;
+    padding: 30px;
   }
 
   .mainBtns {
@@ -550,12 +539,15 @@ small, .text_small {
   }
 }
 @media only screen and (max-width: 651px) {
-  .header-item h2 {
-    font-size: 1.2rem;
+  .header {
+    padding-bottom: 30px;
   }
-
-  #taskBtn {
-    font-size: 0.8rem;
+  .header h1 {
+    font-size: 35px;
+  }
+  .header .dark-blue-btn {
+    font-size: 15px;
+    font-weight: 500;
   }
 
   .cards .responsive-card-text {

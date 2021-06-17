@@ -1,3 +1,4 @@
+// Reference from from Rob Dongas class tutorial walkthrough
 class Navigation {
     constructor(links, pages) {
         this.links = links;

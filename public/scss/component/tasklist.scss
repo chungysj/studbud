@@ -199,7 +199,7 @@
     pointer-events: none;
 }
 
-
+// Responsive
 @media only screen and (max-width: 921px) {
     .task-header {
         margin: 25px 0;
@@ -212,7 +212,6 @@
             padding: 15px 25px 15px 25px;
         }
     }
-    
     .quadrants {
         display: block;
         padding: 0;
@@ -222,7 +221,6 @@
         padding: 0;  // top, right/left, bottom
         display: none;
     }
-      
     .important, .not-important {
         writing-mode: horizontal-tb;
         transform: rotate(0deg);
@@ -242,16 +240,19 @@
         padding: 20px;
         margin: 0 0 30px 0;
     }
-    
 }
 
 @media only screen and (max-width: 651px) {
-    .header-item  h2 {
-        font-size: 1.2rem;
-    }
-    #taskBtn {
-        font-size: 0.8rem;
-    }
+    .header {
+        padding-bottom: 30px;
+        h1 {
+          font-size: 35px;
+        }
+        .dark-blue-btn {
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
     .cards .responsive-card-text {
         display: block;
         font-size: 30px;
@@ -266,7 +267,6 @@
 }
 
 @media only screen and (max-width: 475px) {
-
     .header-item  h2 {
         font-size: 1.15rem;
     }
