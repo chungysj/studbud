@@ -460,6 +460,36 @@ timerNav.links.forEach(function (link) {
     timerNav.setPage(pageId);
   });
 });
+// multiple modals reference from = https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page
+// Get the modal
+var modal = document.getElementsByClassName('modal');
+// Get the button that opens the modal
+var btn = document.getElementsByClassName('openBtn');
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('closeBtn');
+// When the user clicks the button, open the modal
+btn[0].onclick = function () {
+  modal[0].style.display = "block";
+};
+btn[1].onclick = function () {
+  modal[1].style.display = "block";
+};
+// When the user clicks on <span> (x), close the modal
+span[0].onclick = function () {
+  modal[0].style.display = "none";
+};
+span[1].onclick = function () {
+  modal[1].style.display = "none";
+};
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal[0]) {
+    modal[0].style.display = "none";
+  }
+  if (event.target == modal[1]) {
+    modal[1].style.display = "none";
+  }
+};
 
 },{"./component/navigation":"5dOJi","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./component/tasklist":"1PYKt","./component/dictionary":"4P7Sk","./component/stopwatch":"i4jdM","./component/pomodoro":"4rDpH","./component/music":"5PuhK"}],"5dOJi":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
@@ -600,13 +630,13 @@ function renderTask(task){
 
     // Complete Button
     let completedButton = document.createElement("button");
-    completedButton.innerHTML = '<i class="fas fa-check"></i>';
+    completedButton.innerHTML = '<i class="fas fa-check fa-xs"></i>';
     completedButton.classList.add("complete-btn");
     taskDiv.appendChild(completedButton);
 
     // Delete Button
     let delButton = document.createElement("button");
-    delButton.innerHTML = '<i class="fas fa-trash"></i>';
+    delButton.innerHTML = '<i class="fas fa-trash fa-xs"></i>';
     delButton.classList.add('delete-btn');
     taskDiv.appendChild(delButton);
 
@@ -701,32 +731,6 @@ function updateEmpty() {
     //     document.querySelector('.emptyList').style.display = 'block';
     // }
   }
-
-// Get the modal
-var modal = document.getElementById("taskModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("taskBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-btn")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
 
 function days_between(date1, date2) {

@@ -44,13 +44,16 @@
 }
 
 .song-details {
-    margin-top: 25px;  
+    margin-top: 0;  
+    margin-left: 10px;
     p {
         color: #142348;
         text-align: center;
     }
-    .name{
+    .name {
         font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 0;
     }
     .artist{
         font-size: 14px;
@@ -251,7 +254,7 @@ ul li.playing{
         width: 70%;
     }
     .song-details {
-         margin-top: 3%;
+         margin-top: 10%;
         .name {
             font-size: 40px;
         }
@@ -267,7 +270,7 @@ ul li.playing{
 
 @media only screen and (max-width: 850px) {
     .song-details {
-        margin-top: 30%;
+        margin-top: 35%;
        .name {
            font-size: 20px;
        }

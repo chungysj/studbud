@@ -19,7 +19,33 @@
 			<h1>StudBud</h1>
 		  </div>
 		  <div class="header-item">
-			<button class="dark-blue-btn">Instruction</button>
+			<!-- Trigger/Open The Modal -->
+			<button class="openBtn dark-blue-btn">Introduction</button>
+				<!-- The Modal -->
+				<div class="modal intro-modal">
+					<!-- Modal content -->
+					<div class="intro-content">
+						<span class="closeBtn fas fa-times"></span>
+						<div class="intro-text">
+							<h2>Introduction</h2>
+							<ul class="intro-detail">
+								<h2>Pomodoro</h2>
+								<li>A time management system that encourages people to work with the time they have and have and adjustable breaks and sessions.</li>
+								<li>Help complete tasks without distractions, improves productivity and time management.</li>
+								<h2>Stopwatch</h2>
+								<li>A digital display that can be started and stopped at will for exact timing.</li>
+								<h2>Covey Quadrants</h2>
+								<li>A framework for prioritizing your time and tasks for optimized efficiency and productivity</li>
+								<li>Urgency: Tasks and responsibilities requiring immediate action or attention.</li>
+								<li>Importance: Those with high significance or value to goals.</li>
+								<h2>Dictionary</h2>
+								<li>Easy access dictionary</li>
+								<h2>Music Player</h2>
+								<li>Plays CAFE MUSIC ~STUDIO GHIBLI Jazz & Bossa~ to help study and not get distract with other heavy music.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 		  </div>
 		</div>
 		<div class="features">
@@ -155,87 +181,95 @@
 
 		<div class="task">
 			<div class="task-header">
-			<div class="header-item">
-				<h2>Today's Task List</h2>
-			</div>
-			<div class="header-item">
-				<button id="taskBtn" class="light-blue-btn"><i class="fas fa-plus"></i>Add Tasks</button>
-			</div>
+				<div class="header-item">
+					<h2>Today's Task List</h2>
+				</div>
+				<div class="header-item">
+
+					<!-- Trigger/Open The Modal -->
+					<button class="openBtn light-blue-btn"><i class="fas fa-plus"></i><span class="taskBtnText">Add Tasks</span></button>
+				</div>
 			</div>
 			<div class="quadrants">
-			<div id="taskModal" class="modal">
-				<span class="close-btn fas fa-times"></span>
-				<div id="task-grid"> 
-					<form id="taskform">
-					<label for="task">Task:</label>
-					<input type="text" name="task" id="taskInput" required>
-				
-					<!-- Date input -->
-					<label for="dueDate">Due Date: </label>
-					<input type="date" name="dueDate" id="dueDateInput">
+				<!-- The Modal -->
+				<div class="modal task-modal">
+					<!-- Modal content -->
+					<span class="closeBtn fas fa-times"></span>
+					<div id="task-grid"> 
+						<form id="taskform">
+							<label for="task">Task:</label>
+							<input type="text" name="task" id="taskInput" required>
+						
+							<!-- Date input -->
+							<label for="dueDate">Due Date: </label>
+							<input type="date" name="dueDate" id="dueDateInput">
 
-					<!-- Time input -->
-					<label for="completionTime">Completion Time: </label>
-					<input type="time" name="completionTime" id="completionTimeInput">
-				
-					<label for="estimatedTime">Estimated completion time (in mins):</label>
-					<input type="number" name="estimatedTime" id="estimatedTimeInput">
-					
-					<!-- Priority -->
-					<label for="priority">Task Priority:</label>
-					<select name="prority" id="priorityInput">
-					<option value="">Select one</option>
-					<option value="Low">Low</option>
-					<option value="Medium">Medium</option>
-					<option value="High">High</option>
-					</select>
-					<button class="light-blue-btn" type="submit">Submit</button>
-				</form>
-			</div>
-			</div>
-			<div class="space"></div>
-			<div class="urgent">
-				<h2>Urgent</h2>
-			</div>
-			<div class="not-urgent">
-				<h2>Not Urgent</h2>
-			</div>
-			<div class="important">
-				<h2>Important</h2>
-			</div>
-			<div class="not-important">
-				<h2>Not Important</h2>
-			</div>
-			<div class="cards">
-				<div class="task-cards do-it-card">
-					<h2><i class="far fa-check-circle"></i>Do it</h2>
-					<div id="do-it">
-						<p class="emptyList">You have not added any tasks yet</p>
-						<ul></ul>
+							<!-- Time input -->
+							<label for="completionTime">Completion Time: </label>
+							<input type="time" name="completionTime" id="completionTimeInput">
+						
+							<label for="estimatedTime">Estimated completion time (in mins):</label>
+							<input type="number" name="estimatedTime" id="estimatedTimeInput">
+							
+							<!-- Priority -->
+							<label for="priority">Task Priority:</label>
+							<select name="prority" id="priorityInput">
+								<option value="">Select one</option>
+								<option value="Low">Low</option>
+								<option value="Medium">Medium</option>
+								<option value="High">High</option>
+							</select>
+							<button class="light-blue-btn" type="submit">Submit</button>
+						</form>
 					</div>
 				</div>
-				<div class="task-cards schedule-card">
-					<h2><i class="far fa-clock"></i>Schedule</h2>
-					<div id="schedule">
-						<p class="emptyList">You have not added any tasks yet</p>
-						<ul></ul>
+				<div class="space"></div>
+				<div class="urgent">
+					<h2>Urgent</h2>
+				</div>
+				<div class="not-urgent">
+					<h2>Not Urgent</h2>
+				</div>
+				<div class="important">
+					<h2>Important</h2>
+				</div>
+				<div class="not-important">
+					<h2>Not Important</h2>
+				</div>
+				<div class="cards">
+					<span class="responsive-card-text">Urgent & Important</span>
+					<div class="task-cards do-it-card fa-sm">
+						<h2><i class="far fa-check-circle"></i><span class="cards-header-text">Do it</span></h2>
+						<div id="do-it">
+							<p class="emptyList">You have not added any tasks yet</p>
+							<ul></ul>
+						</div>
+					</div>
+					<span class="responsive-card-text">Not Urgent & Important</span>
+					<div class="task-cards schedule-card">
+						<h2><i class="far fa-clock fa-sm"></i><span class="cards-header-text">Schedule</span></h2>
+						<div id="schedule">
+							<p class="emptyList">You have not added any tasks yet</p>
+							<ul></ul>
+						</div>
+					</div>
+					<span class="responsive-card-text">Urgent & Not Important</span>
+					<div class="task-cards relegate-card">
+						<h2><i class="fas fa-user-plus fa-sm"></i><span class="cards-header-text">Relegate</span></h2>
+						<div id="relegate">
+							<p class="emptyList">You have not added any tasks yet</p>
+							<ul></ul>
+						</div>
+					</div>
+					<span class="responsive-card-text">Not Urgent & Not Important</span>
+					<div class="task-cards dont-do-card fa-sm">
+						<div id="dont-do">
+						<h2><i class="fas fa-trash-alt"></i><span class="cards-header-text">Don't Do</span></h2>
+							<p class="emptyList">You have not added any tasks yet</p>
+							<ul></ul>
+						</div>
 					</div>
 				</div>
-				<div class="task-cards relegate-card">
-					<h2><i class="fas fa-user-plus"></i>Relegate</h2>
-					<div id="relegate">
-						<p class="emptyList">You have not added any tasks yet</p>
-						<ul></ul>
-					</div>
-				</div>
-				<div class="task-cards dont-do-card">
-					<div id="dont-do">
-					<h2><i class="fas fa-trash-alt"></i>Don't Do</h2>
-						<p class="emptyList">You have not added any tasks yet</p>
-						<ul></ul>
-					</div>
-				</div>
-			</div>
 			</div>
 		</div>
 	</div>

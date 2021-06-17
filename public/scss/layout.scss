@@ -99,6 +99,97 @@ button {
 }
 
 
+// Add Task button Modal
+.task-modal {
+  display: none; // Hidden by default 
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  border: 1px solid #65adfc;
+  background-color: #fff;
+  border-radius: 30px; 
+  overflow: auto; // Enable scroll if needed 
+}
+
+
+// Intro button Modal
+.intro-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.intro-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  border-radius: 30px;  
+  padding: 40px;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  
+  .intro-text {
+    padding: 2px 16px;
+    .closeBtn {
+      font-size: 50px;
+    }
+    ul {
+      list-style-position: inside;
+      font-size: 22px;
+      font-weight: normal;
+      margin: 0 20px;
+      padding: 0;
+    }
+  }
+  .intro-detail {
+    h2 {
+      padding: 10px 0;
+      font-size: 30px;
+    }
+
+  }
+}
+
+// Modal close button 
+.closeBtn {
+  color: #142348;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+.closeBtn:hover, .closeBtn:focus {
+  color: #65adfc;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+
+
+
+
 @media only screen and (max-width: 1512px) {
   html {
     height: max-content;
@@ -122,6 +213,30 @@ button {
 @media only screen and (max-width: 800px) {
   .header {
     padding-bottom: 50px;
+  }
+  .intro-content {
+    padding: 25px;
+    .intro-text {
+      padding: 0px;
+      h2 {
+        font-size: 25px;
+      }
+      .closeBtn {
+        font-size: xx-large;
+      }
+      ul {
+        font-size: 12px;
+      }
+    }
+    .intro-detail {
+      h2 {
+        font-size: 20px;
+      }
+    }
+    .closeBtn {
+      right: 30px;
+      top: 5px;
+    }
   }
 }
 
