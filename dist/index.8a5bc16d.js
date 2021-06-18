@@ -624,30 +624,32 @@ function addTask(taskDescription, dueDate, estimatedTime, priorityRating, comple
 function renderTask(task){
 
     updateEmpty();
-    // create DIV
-    let taskDiv = document.createElement('div');
-    taskDiv.classList.add("tasksDiv")
+
+    var box = document.querySelector('.box')
+
 
     // Create LI
     let item = document.createElement('li');
+    item.classList.add("itemDiv")
     // set this up as a html attribute, so we can create arbitrary html attributes for different data we install. 
     // we do this by using the set attribute function, for the name attribute we usually use the data pre fix followed by whatever type of data we're storing 
     item.setAttribute('data-id', task.id);
     item.innerHTML = "<p>" + task.taskDescription + "</p>" + "<p>" + task.dueDate + "</p>";
   
-    taskDiv.appendChild(item);
+    box.appendChild(item);
 
+    
     // Complete Button
     let completedButton = document.createElement("button");
     completedButton.innerHTML = '<i class="fas fa-check fa-xs"></i>';
     completedButton.classList.add("complete-btn");
-    taskDiv.appendChild(completedButton);
+    item.appendChild(completedButton);
 
     // Delete Button
     let delButton = document.createElement("button");
     delButton.innerHTML = '<i class="fas fa-trash fa-xs"></i>';
     delButton.classList.add('delete-btn');
-    taskDiv.appendChild(delButton);
+    item.appendChild(delButton);
 
 
     // Event Listeners for DOM elements
@@ -664,12 +666,12 @@ function renderTask(task){
       removeItemFromArray(taskListArray,index)
       console.log(taskListArray);
       updateEmpty();
-      taskDiv.remove();
+      item.remove();
     })
     // Event Listeners for complete button
     completedButton.addEventListener("click", function(event){
-      let taskDiv = event.target.parentElement;
-      taskDiv.classList.toggle("completed");
+      let item = event.target.parentElement;
+      item.classList.toggle("completed");
     })  
 
 // help and assist from Rob Dongas
@@ -709,7 +711,8 @@ function renderTask(task){
     }
 
     // Append 
-    tasklist.appendChild(taskDiv);
+    // which is finding the second item in the tasklist, which is the ul
+    tasklist.children[1].appendChild(item);
 
     // Clear the input form
     form.reset();  
@@ -725,34 +728,35 @@ function renderTask(task){
   }
 
 // Make sure this makes sense for the user, and it doesnt tell them they havent added tasks, when they clearly have 
-// Add in a function to update this depending on if theres a task in the array or not 
+// Help from Rob Dongas
+  // which checks to see if the ul has any children. the childNodes property is an array, so you can actually check it's length 
+  // then inside the if statement, you try to find the empty list just for that specific quadrant
 function updateEmpty() {
-  // if (taskListArray.length > 0){
-  //   document.querySelector('.emptyList').style.display = 'none';
-  // } else {
-  //     document.querySelector('.emptyList').style.display = 'block';
-  // }
-  if (doIt.length > 0) {
-    document.querySelector('.emptyList').style.display = 'none';
+  if (doIt.children[1].childNodes.length > 0) {
+    doIt.querySelector('.emptyList').style.display = 'none';
   } else {
-    document.querySelector('.emptyList').style.display = 'block';
+    doIt.querySelector('.emptyList').style.display = 'block';
   }
-  if (schedule.length > 0) {
-    document.querySelector('.emptyList').style.display = 'none';
+
+  if (schedule.children[1].childNodes.length > 0) {
+    schedule.querySelector('.emptyList').style.display = 'none';
   } else {
-      document.querySelector('.emptyList').style.display = 'block';
+    schedule.querySelector('.emptyList').style.display = 'block';
   }
-  if (relegate.length > 0) {
-    document.querySelector('.emptyList').style.display = 'none';
+
+  if (relegate.children[1].childNodes.length > 0) {
+    relegate.querySelector('.emptyList').style.display = 'none';
   } else {
-      document.querySelector('.emptyList').style.display = 'block';
+    relegate.querySelector('.emptyList').style.display = 'block';
   }
-  if (dontDo.length > 0) {
-    document.querySelector('.emptyList').style.display = 'none';
+
+  if (dontDo.children[1].childNodes.length > 0) {
+    dontDo.querySelector('.emptyList').style.display = 'none';
   } else {
-      document.querySelector('.emptyList').style.display = 'block';
+    dontDo.querySelector('.emptyList').style.display = 'block';
   }
-  }
+  
+}
 
 
 function days_between(date1, date2) {

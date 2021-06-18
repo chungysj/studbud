@@ -24,17 +24,6 @@
     grid-area: tasklist;
     list-style: none;
 }
-.tasksDiv {
-    margin: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none; /* Remove bullets */
-}
-
-.tasksDiv li {
-    flex: 1;
-}
 
 .header-item {
     color: #142348;
@@ -100,31 +89,24 @@
 .space { 
     grid-area: space; 
 }
-
 .urgent, .not-urgent, .important, .not-important {
     text-align: center;
 }
-
 .urgent { 
     grid-area: urgent; 
 }
-
 .not-urgent { 
     grid-area: not-urgent; 
 }
-
 .important { 
     grid-area: important;
 }
-
 .not-important { 
     grid-area: not-important;
 }
-
 .urgent, .not-urgent{
     padding: 30px 0px 15px;  // top, right/left, bottom
 }
-  
 .important, .not-important {
     // Chrome doesnt support CSS writing-mode: sideways-lr but accepts vertical 
     // So I used to transform rotate to create what I wanted
@@ -133,6 +115,7 @@
     padding: 15px;
     margin-top: 50px;
 }
+
 
 // quadrants cards layout
 .cards {
@@ -175,7 +158,34 @@
     display: none;
 }
 
-// quadrants lasts buttons
+// quadrants ul li section
+.box {
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding:0;   
+    li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        p {
+            padding: 0;
+            margin-right: 20px;
+        }
+    }
+    button {
+        padding: 0;
+        height: 45px;
+        width: 45px;
+        margin: 20px 5px;
+        
+    }
+}
+    .emptyList {
+        font-size: 20px;
+    }
+
+// li buttons
 .delete-btn, .complete-btn {
     background: coral;
     color: white;
@@ -183,18 +193,14 @@
     padding: 10px 13px;
     cursor: pointer;
     border-radius: 50px;
-    margin-left: 15px;
 }
-
 .complete-btn {
     background: green;
 }
-
 .completed {
     text-decoration: line-through;
     opacity: 0.5;
 }
-
 .fa-trash, .fa-check {
     pointer-events: none;
 }

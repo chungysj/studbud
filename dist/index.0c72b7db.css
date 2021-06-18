@@ -347,17 +347,6 @@ small, .text_small {
   grid-area: tasklist;
   list-style: none;
 }
-.tasksDiv {
-  margin: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  /* Remove bullets */
-}
-.tasksDiv li {
-  flex: 1;
-}
 .header-item {
   color: #142348;
   font-weight: 700;
@@ -471,6 +460,30 @@ small, .text_small {
 .responsive-card-text {
   display: none;
 }
+.box {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.box li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.box li p {
+  padding: 0;
+  margin-right: 20px;
+}
+.box button {
+  padding: 0;
+  height: 45px;
+  width: 45px;
+  margin: 20px 5px;
+}
+.emptyList {
+  font-size: 20px;
+}
 .delete-btn, .complete-btn {
   background: coral;
   color: white;
@@ -478,7 +491,6 @@ small, .text_small {
   padding: 10px 13px;
   cursor: pointer;
   border-radius: 50px;
-  margin-left: 15px;
 }
 .complete-btn {
   background: green;
