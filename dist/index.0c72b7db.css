@@ -436,11 +436,6 @@ small, .text_small {
   grid-area: cards;
   padding-right: 50px;
 }
-.cards .task-cards {
-  border-radius: 30px;
-  padding: 40px;
-  overflow-y: auto;
-}
 .cards .do-it-card {
   grid-area: do-it-card;
   background-color: #edf7ff;
@@ -460,11 +455,18 @@ small, .text_small {
 .responsive-card-text {
   display: none;
 }
+.task-cards {
+  border-radius: 30px;
+  padding: 40px;
+}
 .box {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
+  height: 180px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .box li {
   display: flex;

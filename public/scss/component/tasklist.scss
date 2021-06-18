@@ -128,12 +128,6 @@
     grid-area: cards;
     padding-right: 50px; 
 
-    .task-cards {
-        border-radius: 30px;  
-        padding: 40px;
-        overflow-y: auto;
-    }
-
     .do-it-card { 
         grid-area: do-it-card;
         background-color: #edf7ff;
@@ -157,13 +151,21 @@
 .responsive-card-text {
     display: none;
 }
+.task-cards {
+    border-radius: 30px;  
+    padding: 40px;
+}
 
 // quadrants ul li section
 .box {
     display: flex;
     flex-direction: column;
     margin:0;
-    padding:0;   
+    padding:0;
+    height: 180px;
+    overflow: hidden;
+    overflow-y: auto;
+
     li {
         display: flex;
         flex-direction: row;

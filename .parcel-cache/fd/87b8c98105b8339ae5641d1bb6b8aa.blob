@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>studBud</title>
-	<link href="scss/main.scss" rel="stylesheet" type="text/css">
+	<link href="/index.HASH_REF_80038805bd6829e42a01d0f20c72b7db.css" rel="stylesheet" type="text/css">
 	<!-- Font Awesome Icon -->
 	<script src="https://kit.fontawesome.com/438023e851.js" crossorigin="anonymous"></script>
 	<!-- Google Icon -->
@@ -65,13 +65,16 @@
 							<h3 id="pomo-text">Start Working!</h3>
 						</div>
 						<div class="pomo-controller">
-							<div class="sBtn" id="SBTN" style="display:block"> 
+							<div class="sBtn" id="SBTN" style="display:block
+"> 
 								<button id="pomo-start-button" class="mainBtns">Start</button> 
 							</div>
-							<div class="sBtn" id="PBTN" style="display:none"> 
+							<div class="sBtn" id="PBTN" style="display:none
+"> 
 								<button id="pomo-pause-button" class="mainBtns">Pause</button> 
 							</div>
-							<div class="sBtn" id="CBTN" style="display:none"> 
+							<div class="sBtn" id="CBTN" style="display:none
+"> 
 								<button id="pomo-continue-button" class="mainBtns">Resume</button> 
 							</div>
 							<div class="rBtn"> 
@@ -99,7 +102,7 @@
 					</div>
 				</div>
 			</div>
-			<div id='stopwatch' class="timer-page-container">
+			<div id="stopwatch" class="timer-page-container">
 				<div class="stopwatch-container">
 					<span class="stopwatch">00:00:00:00</span>
 					<div class="stopwatch-controls">
@@ -114,7 +117,7 @@
 				<div class="song-container">
 				  <div class="song-img-box">
 					<div class="img-area">
-					  <img src="" alt="">
+					  <img src="/index.html" alt="">
 					</div>
 				  </div>
 				  <div class="song-bio-box">
@@ -127,7 +130,7 @@
 				<div class="process-container">
 					<div class="progress-area">
 						<div class="progress-bar">
-							<audio id="main-audio" src=""></audio>
+							<audio id="main-audio" src="/index.html"></audio>
 						</div>
 						<div class="song-timer">
 							<span class="current-time">0:00</span>
@@ -147,7 +150,7 @@
 				<div class="music-list">
 				  <div class="music-list-header">
 					<div class="music-list-row">
-					  <i class= "list material-icons">queue_music</i>
+					  <i class="list material-icons">queue_music</i>
 					  <span>Music list</span>
 					</div>
 					<i id="music-list-close" class="material-icons">close</i>
@@ -195,7 +198,7 @@
 					<div id="task-grid"> 
 						<form id="taskform">
 							<label for="task">Task:</label>
-							<input type="text" name="task" id="taskInput" required>
+							<input type="text" name="task" id="taskInput" required="">
 						
 							<!-- Date input -->
 							<label for="dueDate">Due Date: </label>
@@ -271,7 +274,7 @@
 		</div>
 	</div>
 	
-	<script src="script.js"></script>
+	<script src="/index.HASH_REF_97912cc17f1f5bdf37964fbc8a5bc16d.js"></script>
 
 </body>
 </html>
