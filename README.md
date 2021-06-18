@@ -8,3 +8,7 @@ Especially for students with learning disability and ADHD.
 * Stopwatch Timer 
 * Dictionary Lookup
 * Music Player 
+
+# Comment
+Sadly the music player doesnt work
+My responsive design changed 
